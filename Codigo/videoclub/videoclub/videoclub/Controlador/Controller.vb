@@ -2,12 +2,7 @@
 
 Public Class Controller
 
-    Sub Main()
 
-
-
-
-    End Sub
 
 
     Function Escribir()
@@ -21,6 +16,7 @@ Public Class Controller
 
             cmd.ExecuteNonQuery()
             Console.WriteLine("Registro exitoso")
+
 
         Catch ex As Exception
             MsgBox(ex.Message)
