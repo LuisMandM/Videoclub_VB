@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\Controller.vb" />
+    <Compile Include="Controlador\ReadSQL.vb" />
     <Compile Include="Controlador\WriteSQL.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>

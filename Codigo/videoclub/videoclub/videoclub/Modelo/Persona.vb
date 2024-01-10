@@ -10,4 +10,8 @@
         Me.id = id
         Me.nombre = nombre
     End Sub
+
+    Public Function verInfo()
+        Return "Nombre: " + Me.nombre + "Id: " + Me.id.ToString
+    End Function
 End Class
