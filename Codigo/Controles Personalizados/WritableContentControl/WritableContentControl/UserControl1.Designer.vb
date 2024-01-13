@@ -30,17 +30,17 @@ Partial Class WritableContent
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.cbox_1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.picBox = New System.Windows.Forms.PictureBox()
+        Me.tbox_Registro = New System.Windows.Forms.TextBox()
+        Me.tbox_Duracion = New System.Windows.Forms.TextBox()
+        Me.tbox_Productora = New System.Windows.Forms.TextBox()
+        Me.tbox_Sinopsis = New System.Windows.Forms.TextBox()
+        Me.cbox_Director = New System.Windows.Forms.ComboBox()
+        Me.cbox_Genero = New System.Windows.Forms.ComboBox()
+        Me.picBox_Poster = New System.Windows.Forms.PictureBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.tlp_Principal.SuspendLayout()
         Me.tlp_WritableContent.SuspendLayout()
-        CType(Me.picBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picBox_Poster, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_Principal
@@ -49,7 +49,7 @@ Partial Class WritableContent
         Me.tlp_Principal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.0!))
         Me.tlp_Principal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.0!))
         Me.tlp_Principal.Controls.Add(Me.tlp_WritableContent, 0, 0)
-        Me.tlp_Principal.Controls.Add(Me.picBox, 1, 0)
+        Me.tlp_Principal.Controls.Add(Me.picBox_Poster, 1, 0)
         Me.tlp_Principal.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_Principal.Location = New System.Drawing.Point(0, 0)
         Me.tlp_Principal.Name = "tlp_Principal"
@@ -69,12 +69,12 @@ Partial Class WritableContent
         Me.tlp_WritableContent.Controls.Add(Me.Label5, 0, 4)
         Me.tlp_WritableContent.Controls.Add(Me.Label6, 0, 5)
         Me.tlp_WritableContent.Controls.Add(Me.Label7, 0, 6)
-        Me.tlp_WritableContent.Controls.Add(Me.TextBox1, 1, 1)
-        Me.tlp_WritableContent.Controls.Add(Me.TextBox3, 1, 3)
-        Me.tlp_WritableContent.Controls.Add(Me.TextBox4, 1, 4)
-        Me.tlp_WritableContent.Controls.Add(Me.TextBox6, 1, 6)
-        Me.tlp_WritableContent.Controls.Add(Me.cbox_1, 1, 2)
-        Me.tlp_WritableContent.Controls.Add(Me.ComboBox2, 1, 5)
+        Me.tlp_WritableContent.Controls.Add(Me.tbox_Registro, 1, 1)
+        Me.tlp_WritableContent.Controls.Add(Me.tbox_Duracion, 1, 3)
+        Me.tlp_WritableContent.Controls.Add(Me.tbox_Productora, 1, 4)
+        Me.tlp_WritableContent.Controls.Add(Me.tbox_Sinopsis, 1, 6)
+        Me.tlp_WritableContent.Controls.Add(Me.cbox_Director, 1, 2)
+        Me.tlp_WritableContent.Controls.Add(Me.cbox_Genero, 1, 5)
         Me.tlp_WritableContent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_WritableContent.Location = New System.Drawing.Point(3, 3)
         Me.tlp_WritableContent.Name = "tlp_WritableContent"
@@ -167,90 +167,90 @@ Partial Class WritableContent
         Me.Label7.Text = "Sinopsis"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox1
+        'tbox_Registro
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.DimGray
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox1.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.SystemColors.Window
-        Me.TextBox1.Location = New System.Drawing.Point(157, 65)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(354, 24)
-        Me.TextBox1.TabIndex = 7
+        Me.tbox_Registro.BackColor = System.Drawing.Color.DimGray
+        Me.tbox_Registro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbox_Registro.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbox_Registro.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbox_Registro.ForeColor = System.Drawing.SystemColors.Window
+        Me.tbox_Registro.Location = New System.Drawing.Point(157, 65)
+        Me.tbox_Registro.Name = "tbox_Registro"
+        Me.tbox_Registro.Size = New System.Drawing.Size(354, 24)
+        Me.tbox_Registro.TabIndex = 7
         '
-        'TextBox3
+        'tbox_Duracion
         '
-        Me.TextBox3.BackColor = System.Drawing.Color.DimGray
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox3.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.ForeColor = System.Drawing.SystemColors.Window
-        Me.TextBox3.Location = New System.Drawing.Point(157, 126)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(354, 24)
-        Me.TextBox3.TabIndex = 9
+        Me.tbox_Duracion.BackColor = System.Drawing.Color.DimGray
+        Me.tbox_Duracion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbox_Duracion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbox_Duracion.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbox_Duracion.ForeColor = System.Drawing.SystemColors.Window
+        Me.tbox_Duracion.Location = New System.Drawing.Point(157, 126)
+        Me.tbox_Duracion.Name = "tbox_Duracion"
+        Me.tbox_Duracion.Size = New System.Drawing.Size(354, 24)
+        Me.tbox_Duracion.TabIndex = 9
         '
-        'TextBox4
+        'tbox_Productora
         '
-        Me.TextBox4.BackColor = System.Drawing.Color.DimGray
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox4.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.ForeColor = System.Drawing.SystemColors.Window
-        Me.TextBox4.Location = New System.Drawing.Point(157, 156)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(354, 24)
-        Me.TextBox4.TabIndex = 10
+        Me.tbox_Productora.BackColor = System.Drawing.Color.DimGray
+        Me.tbox_Productora.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbox_Productora.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbox_Productora.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbox_Productora.ForeColor = System.Drawing.SystemColors.Window
+        Me.tbox_Productora.Location = New System.Drawing.Point(157, 156)
+        Me.tbox_Productora.Name = "tbox_Productora"
+        Me.tbox_Productora.Size = New System.Drawing.Size(354, 24)
+        Me.tbox_Productora.TabIndex = 10
         '
-        'TextBox6
+        'tbox_Sinopsis
         '
-        Me.TextBox6.BackColor = System.Drawing.Color.DimGray
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox6.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.ForeColor = System.Drawing.SystemColors.Window
-        Me.TextBox6.Location = New System.Drawing.Point(157, 217)
-        Me.TextBox6.Multiline = True
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(354, 244)
-        Me.TextBox6.TabIndex = 12
+        Me.tbox_Sinopsis.BackColor = System.Drawing.Color.DimGray
+        Me.tbox_Sinopsis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbox_Sinopsis.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbox_Sinopsis.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbox_Sinopsis.ForeColor = System.Drawing.SystemColors.Window
+        Me.tbox_Sinopsis.Location = New System.Drawing.Point(157, 217)
+        Me.tbox_Sinopsis.Multiline = True
+        Me.tbox_Sinopsis.Name = "tbox_Sinopsis"
+        Me.tbox_Sinopsis.Size = New System.Drawing.Size(354, 244)
+        Me.tbox_Sinopsis.TabIndex = 12
         '
-        'cbox_1
+        'cbox_Director
         '
-        Me.cbox_1.BackColor = System.Drawing.Color.DimGray
-        Me.cbox_1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.cbox_1.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbox_1.ForeColor = System.Drawing.SystemColors.Window
-        Me.cbox_1.FormattingEnabled = True
-        Me.cbox_1.Location = New System.Drawing.Point(157, 95)
-        Me.cbox_1.Name = "cbox_1"
-        Me.cbox_1.Size = New System.Drawing.Size(354, 25)
-        Me.cbox_1.TabIndex = 13
+        Me.cbox_Director.BackColor = System.Drawing.Color.DimGray
+        Me.cbox_Director.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbox_Director.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbox_Director.ForeColor = System.Drawing.SystemColors.Window
+        Me.cbox_Director.FormattingEnabled = True
+        Me.cbox_Director.Location = New System.Drawing.Point(157, 95)
+        Me.cbox_Director.Name = "cbox_Director"
+        Me.cbox_Director.Size = New System.Drawing.Size(354, 25)
+        Me.cbox_Director.TabIndex = 13
         '
-        'ComboBox2
+        'cbox_Genero
         '
-        Me.ComboBox2.BackColor = System.Drawing.Color.DimGray
-        Me.ComboBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ComboBox2.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.ForeColor = System.Drawing.SystemColors.Window
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(157, 186)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(354, 25)
-        Me.ComboBox2.TabIndex = 14
+        Me.cbox_Genero.BackColor = System.Drawing.Color.DimGray
+        Me.cbox_Genero.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbox_Genero.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbox_Genero.ForeColor = System.Drawing.SystemColors.Window
+        Me.cbox_Genero.FormattingEnabled = True
+        Me.cbox_Genero.Location = New System.Drawing.Point(157, 186)
+        Me.cbox_Genero.Name = "cbox_Genero"
+        Me.cbox_Genero.Size = New System.Drawing.Size(354, 25)
+        Me.cbox_Genero.TabIndex = 14
         '
-        'picBox
+        'picBox_Poster
         '
-        Me.picBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.picBox.InitialImage = Nothing
-        Me.picBox.Location = New System.Drawing.Point(535, 15)
-        Me.picBox.Margin = New System.Windows.Forms.Padding(15)
-        Me.picBox.Name = "picBox"
-        Me.picBox.Size = New System.Drawing.Size(317, 440)
-        Me.picBox.TabIndex = 1
-        Me.picBox.TabStop = False
+        Me.picBox_Poster.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picBox_Poster.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.picBox_Poster.InitialImage = Nothing
+        Me.picBox_Poster.Location = New System.Drawing.Point(535, 15)
+        Me.picBox_Poster.Margin = New System.Windows.Forms.Padding(15)
+        Me.picBox_Poster.Name = "picBox_Poster"
+        Me.picBox_Poster.Size = New System.Drawing.Size(317, 440)
+        Me.picBox_Poster.TabIndex = 1
+        Me.picBox_Poster.TabStop = False
         '
         'OpenFileDialog1
         '
@@ -267,7 +267,7 @@ Partial Class WritableContent
         Me.tlp_Principal.ResumeLayout(False)
         Me.tlp_WritableContent.ResumeLayout(False)
         Me.tlp_WritableContent.PerformLayout()
-        CType(Me.picBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBox_Poster, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -280,12 +280,12 @@ Partial Class WritableContent
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents cbox_1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents picBox As PictureBox
+    Friend WithEvents tbox_Registro As TextBox
+    Friend WithEvents tbox_Duracion As TextBox
+    Friend WithEvents tbox_Productora As TextBox
+    Friend WithEvents tbox_Sinopsis As TextBox
+    Friend WithEvents cbox_Director As ComboBox
+    Friend WithEvents cbox_Genero As ComboBox
+    Friend WithEvents picBox_Poster As PictureBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class
