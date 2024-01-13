@@ -166,7 +166,12 @@
     </Content>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Controles Personalizados\WritableContentControl\WritableContentControl\WritableContentControl.vbproj">
+      <Project>{4976B020-F42C-4F72-BD0F-080125EE6298}</Project>
+      <Name>WritableContentControl</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
