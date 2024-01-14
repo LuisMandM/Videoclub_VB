@@ -126,6 +126,12 @@
     <Compile Include="Vista\Add_Persona_Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Add_Role_Form.Designer.vb">
+      <DependentUpon>Add_Role_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Add_Role_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\info_Form.Designer.vb">
       <DependentUpon>info_Form.vb</DependentUpon>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Add_Persona_Form.resx">
       <DependentUpon>Add_Persona_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Add_Role_Form.resx">
+      <DependentUpon>Add_Role_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\info_Form.resx">
       <DependentUpon>info_Form.vb</DependentUpon>
