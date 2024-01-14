@@ -213,6 +213,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Controles Personalizados\DetailPreView\DetailPreView\DetailPreView.vbproj">
+      <Project>{5AD8BB47-662C-4BEC-9AD4-203B70CC3C9A}</Project>
+      <Name>DetailPreView</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Controles Personalizados\WritableContentControl\WritableContentControl\WritableContentControl.vbproj">
       <Project>{4976B020-F42C-4F72-BD0F-080125EE6298}</Project>
       <Name>WritableContentControl</Name>

@@ -30,6 +30,7 @@ Public Class Controller
             COMEDIA
             DRAMA
             ANIMACION
+            SCIFI
         End Enum
 
     End Structure
