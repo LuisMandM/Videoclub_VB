@@ -249,6 +249,7 @@ Partial Class WritableContent
         Me.picBox_Poster.Margin = New System.Windows.Forms.Padding(15)
         Me.picBox_Poster.Name = "picBox_Poster"
         Me.picBox_Poster.Size = New System.Drawing.Size(317, 440)
+        Me.picBox_Poster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picBox_Poster.TabIndex = 1
         Me.picBox_Poster.TabStop = False
         '

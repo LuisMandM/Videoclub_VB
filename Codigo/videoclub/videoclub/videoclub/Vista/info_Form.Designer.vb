@@ -23,266 +23,102 @@ Partial Class info_Form
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.tlp_Principal = New System.Windows.Forms.TableLayoutPanel()
-        Me.tlp_Content = New System.Windows.Forms.TableLayoutPanel()
-        Me.tlp_WritableContent = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.tlp_multimedia = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.tlp_DisplayControls = New System.Windows.Forms.TableLayoutPanel()
+        Me.wcontent = New WritableContentControl.WritableContent()
+        Me.dataGrid_Roles = New System.Windows.Forms.DataGridView()
+        Me.btton_Close = New System.Windows.Forms.Button()
         Me.tlp_Principal.SuspendLayout()
-        Me.tlp_Content.SuspendLayout()
-        Me.tlp_WritableContent.SuspendLayout()
-        Me.tlp_multimedia.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tlp_DisplayControls.SuspendLayout()
+        CType(Me.dataGrid_Roles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_Principal
         '
+        Me.tlp_Principal.BackColor = System.Drawing.SystemColors.ControlText
         Me.tlp_Principal.ColumnCount = 1
         Me.tlp_Principal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlp_Principal.Controls.Add(Me.tlp_Content, 0, 0)
+        Me.tlp_Principal.Controls.Add(Me.tlp_DisplayControls, 0, 0)
+        Me.tlp_Principal.Controls.Add(Me.btton_Close, 0, 1)
         Me.tlp_Principal.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_Principal.Location = New System.Drawing.Point(0, 0)
         Me.tlp_Principal.Name = "tlp_Principal"
         Me.tlp_Principal.RowCount = 2
         Me.tlp_Principal.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.0!))
         Me.tlp_Principal.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlp_Principal.Size = New System.Drawing.Size(1272, 450)
+        Me.tlp_Principal.Size = New System.Drawing.Size(1272, 499)
         Me.tlp_Principal.TabIndex = 0
         '
-        'tlp_Content
+        'tlp_DisplayControls
         '
-        Me.tlp_Content.ColumnCount = 2
-        Me.tlp_Content.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.0!))
-        Me.tlp_Content.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.0!))
-        Me.tlp_Content.Controls.Add(Me.tlp_WritableContent, 0, 0)
-        Me.tlp_Content.Controls.Add(Me.tlp_multimedia, 1, 0)
-        Me.tlp_Content.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlp_Content.Location = New System.Drawing.Point(3, 3)
-        Me.tlp_Content.Name = "tlp_Content"
-        Me.tlp_Content.RowCount = 1
-        Me.tlp_Content.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlp_Content.Size = New System.Drawing.Size(1266, 399)
-        Me.tlp_Content.TabIndex = 0
+        Me.tlp_DisplayControls.ColumnCount = 2
+        Me.tlp_DisplayControls.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.0!))
+        Me.tlp_DisplayControls.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
+        Me.tlp_DisplayControls.Controls.Add(Me.wcontent, 0, 0)
+        Me.tlp_DisplayControls.Controls.Add(Me.dataGrid_Roles, 1, 0)
+        Me.tlp_DisplayControls.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlp_DisplayControls.Location = New System.Drawing.Point(3, 3)
+        Me.tlp_DisplayControls.MinimumSize = New System.Drawing.Size(1266, 443)
+        Me.tlp_DisplayControls.Name = "tlp_DisplayControls"
+        Me.tlp_DisplayControls.RowCount = 1
+        Me.tlp_DisplayControls.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlp_DisplayControls.Size = New System.Drawing.Size(1266, 443)
+        Me.tlp_DisplayControls.TabIndex = 0
         '
-        'tlp_WritableContent
+        'wcontent
         '
-        Me.tlp_WritableContent.ColumnCount = 2
-        Me.tlp_WritableContent.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlp_WritableContent.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlp_WritableContent.Controls.Add(Me.Label1, 0, 1)
-        Me.tlp_WritableContent.Controls.Add(Me.Label3, 0, 3)
-        Me.tlp_WritableContent.Controls.Add(Me.Label4, 0, 4)
-        Me.tlp_WritableContent.Controls.Add(Me.Label5, 0, 5)
-        Me.tlp_WritableContent.Controls.Add(Me.Label6, 0, 6)
-        Me.tlp_WritableContent.Controls.Add(Me.Label2, 0, 2)
-        Me.tlp_WritableContent.Controls.Add(Me.TextBox1, 1, 1)
-        Me.tlp_WritableContent.Controls.Add(Me.TextBox2, 1, 3)
-        Me.tlp_WritableContent.Controls.Add(Me.TextBox3, 1, 4)
-        Me.tlp_WritableContent.Controls.Add(Me.ComboBox1, 1, 2)
-        Me.tlp_WritableContent.Controls.Add(Me.ComboBox2, 1, 5)
-        Me.tlp_WritableContent.Controls.Add(Me.TextBox4, 1, 6)
-        Me.tlp_WritableContent.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlp_WritableContent.Location = New System.Drawing.Point(3, 3)
-        Me.tlp_WritableContent.Name = "tlp_WritableContent"
-        Me.tlp_WritableContent.RowCount = 7
-        Me.tlp_WritableContent.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.tlp_WritableContent.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tlp_WritableContent.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tlp_WritableContent.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tlp_WritableContent.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tlp_WritableContent.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tlp_WritableContent.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
-        Me.tlp_WritableContent.Size = New System.Drawing.Size(500, 393)
-        Me.tlp_WritableContent.TabIndex = 0
+        Me.wcontent.BackColor = System.Drawing.SystemColors.ControlText
+        Me.wcontent.DataSource = Nothing
+        Me.wcontent.DisplayMember1 = ""
+        Me.wcontent.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.wcontent.Location = New System.Drawing.Point(3, 3)
+        Me.wcontent.MinimumSize = New System.Drawing.Size(317, 440)
+        Me.wcontent.Name = "wcontent"
+        Me.wcontent.Size = New System.Drawing.Size(880, 440)
+        Me.wcontent.TabIndex = 0
+        Me.wcontent.ValueMember1 = ""
         '
-        'Label1
+        'dataGrid_Roles
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 49)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 16)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "#Registro"
+        Me.dataGrid_Roles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataGrid_Roles.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dataGrid_Roles.Location = New System.Drawing.Point(889, 3)
+        Me.dataGrid_Roles.Name = "dataGrid_Roles"
+        Me.dataGrid_Roles.RowHeadersWidth = 51
+        Me.dataGrid_Roles.RowTemplate.Height = 24
+        Me.dataGrid_Roles.Size = New System.Drawing.Size(374, 437)
+        Me.dataGrid_Roles.TabIndex = 1
         '
-        'Label3
+        'btton_Close
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(3, 107)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 16)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Duración"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(3, 135)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(73, 16)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Productora"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(3, 163)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(52, 16)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Genero"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(3, 193)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(59, 16)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Sinopsis"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 77)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(54, 16)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Director"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox1.Location = New System.Drawing.Point(253, 52)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(244, 22)
-        Me.TextBox1.TabIndex = 6
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox2.Location = New System.Drawing.Point(253, 110)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(244, 22)
-        Me.TextBox2.TabIndex = 7
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox3.Location = New System.Drawing.Point(253, 138)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(244, 22)
-        Me.TextBox3.TabIndex = 8
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(253, 80)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBox1.TabIndex = 10
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(253, 166)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBox2.TabIndex = 11
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox4.Location = New System.Drawing.Point(253, 196)
-        Me.TextBox4.Multiline = True
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(244, 194)
-        Me.TextBox4.TabIndex = 12
-        '
-        'tlp_multimedia
-        '
-        Me.tlp_multimedia.ColumnCount = 2
-        Me.tlp_multimedia.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlp_multimedia.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlp_multimedia.Controls.Add(Me.PictureBox1, 0, 0)
-        Me.tlp_multimedia.Controls.Add(Me.DataGridView1, 1, 0)
-        Me.tlp_multimedia.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlp_multimedia.Location = New System.Drawing.Point(509, 3)
-        Me.tlp_multimedia.Name = "tlp_multimedia"
-        Me.tlp_multimedia.RowCount = 1
-        Me.tlp_multimedia.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlp_multimedia.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 393.0!))
-        Me.tlp_multimedia.Size = New System.Drawing.Size(754, 393)
-        Me.tlp_multimedia.TabIndex = 1
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(371, 387)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(380, 3)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(371, 387)
-        Me.DataGridView1.TabIndex = 2
+        Me.btton_Close.BackColor = System.Drawing.Color.Yellow
+        Me.btton_Close.Dock = System.Windows.Forms.DockStyle.Left
+        Me.btton_Close.Font = New System.Drawing.Font("Courier New", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btton_Close.Location = New System.Drawing.Point(3, 452)
+        Me.btton_Close.Name = "btton_Close"
+        Me.btton_Close.Size = New System.Drawing.Size(150, 44)
+        Me.btton_Close.TabIndex = 1
+        Me.btton_Close.Text = "Cerrar"
+        Me.btton_Close.UseVisualStyleBackColor = False
         '
         'info_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1272, 450)
+        Me.ClientSize = New System.Drawing.Size(1272, 499)
         Me.Controls.Add(Me.tlp_Principal)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "info_Form"
         Me.Text = "info_Form"
         Me.tlp_Principal.ResumeLayout(False)
-        Me.tlp_Content.ResumeLayout(False)
-        Me.tlp_WritableContent.ResumeLayout(False)
-        Me.tlp_WritableContent.PerformLayout()
-        Me.tlp_multimedia.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tlp_DisplayControls.ResumeLayout(False)
+        CType(Me.dataGrid_Roles, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents tlp_Principal As TableLayoutPanel
-    Friend WithEvents tlp_Content As TableLayoutPanel
-    Friend WithEvents tlp_WritableContent As TableLayoutPanel
-    Friend WithEvents tlp_multimedia As TableLayoutPanel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents tlp_DisplayControls As TableLayoutPanel
+    Friend WithEvents wcontent As WritableContentControl.WritableContent
+    Friend WithEvents dataGrid_Roles As DataGridView
+    Friend WithEvents btton_Close As Button
 End Class

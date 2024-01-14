@@ -33,7 +33,14 @@
     End Property
 
 
-
+    Public Overrides Property MinimumSize As Size
+        Get
+            Return MyBase.MinimumSize
+        End Get
+        Set(value As Size)
+            MyBase.MinimumSize = New Size(317, 440)
+        End Set
+    End Property
 
 
     'Funcion para la selección de la foto <- funciona en local probar a la escritura desde la recuperacion desde BD.

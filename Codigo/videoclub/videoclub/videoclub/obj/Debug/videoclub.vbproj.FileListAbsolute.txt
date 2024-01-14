@@ -22,3 +22,6 @@ D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub
 D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\obj\Debug\videoclub.pdb
 D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\obj\Debug\videoclub.info_Form.resources
 D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\obj\Debug\videoclub.Main_Form.resources
+D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\bin\Debug\WritableContentControl.dll
+D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\bin\Debug\WritableContentControl.pdb
+D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\bin\Debug\WritableContentControl.xml
