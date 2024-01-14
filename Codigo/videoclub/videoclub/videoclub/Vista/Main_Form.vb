@@ -13,7 +13,9 @@
         formulario.MdiParent = Me
         formulario.Dock = DockStyle.Fill
         formulario.Show()
-    End Sub
+    End Sub MySub()
+
+End Sub
 
     Private Sub smi_Pelicula_Click(sender As Object, e As EventArgs) Handles smi_Pelicula.Click
         InsertarFormulario(writable_Form.GetInstance)
