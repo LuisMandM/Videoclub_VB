@@ -57,7 +57,6 @@ Partial Class info_Form
         Me.tlp_DisplayControls.Controls.Add(Me.dataGrid_Roles, 1, 0)
         Me.tlp_DisplayControls.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_DisplayControls.Location = New System.Drawing.Point(3, 3)
-        Me.tlp_DisplayControls.MinimumSize = New System.Drawing.Size(1266, 443)
         Me.tlp_DisplayControls.Name = "tlp_DisplayControls"
         Me.tlp_DisplayControls.RowCount = 1
         Me.tlp_DisplayControls.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -107,6 +106,7 @@ Partial Class info_Form
         Me.ClientSize = New System.Drawing.Size(1272, 499)
         Me.Controls.Add(Me.tlp_Principal)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.MinimumSize = New System.Drawing.Size(1272, 499)
         Me.Name = "info_Form"
         Me.Text = "info_Form"
         Me.tlp_Principal.ResumeLayout(False)

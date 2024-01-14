@@ -132,6 +132,12 @@
     <Compile Include="Vista\Main_Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\writable_Form.Designer.vb">
+      <DependentUpon>writable_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\writable_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Main_Form.resx">
       <DependentUpon>Main_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\writable_Form.resx">
+      <DependentUpon>writable_Form.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
