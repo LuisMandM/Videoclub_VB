@@ -109,6 +109,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -150,6 +151,12 @@
     <Compile Include="Vista\Main_Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Views_Form.Designer.vb">
+      <DependentUpon>Views_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Views_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\writable_Form.Designer.vb">
       <DependentUpon>writable_Form.vb</DependentUpon>
     </Compile>
@@ -181,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Main_Form.resx">
       <DependentUpon>Main_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Views_Form.resx">
+      <DependentUpon>Views_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\writable_Form.resx">
       <DependentUpon>writable_Form.vb</DependentUpon>

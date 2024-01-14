@@ -25,3 +25,8 @@ D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub
 D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\bin\Debug\WritableContentControl.dll
 D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\bin\Debug\WritableContentControl.pdb
 D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\bin\Debug\WritableContentControl.xml
+D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\obj\Debug\videoclub.Add_Persona_Form.resources
+D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\obj\Debug\videoclub.Add_Role_Form.resources
+D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\obj\Debug\videoclub.Init_Form.resources
+D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\obj\Debug\videoclub.writable_Form.resources
+D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\obj\Debug\videoclub.Views_Form.resources
