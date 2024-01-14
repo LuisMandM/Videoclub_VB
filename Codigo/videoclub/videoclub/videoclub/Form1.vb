@@ -5,4 +5,8 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'sql_Actor.ReadDirector_Single(1)
     End Sub
+
+    Private Sub WritableContent1_Load(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
