@@ -45,7 +45,11 @@
 
     'Funcion para la selección de la foto <- funciona en local probar a la escritura desde la recuperacion desde BD.
     Private Sub picBox_Click(sender As Object, e As EventArgs) Handles picBox_Poster.Click
-        RaiseEvent clickLoad()
+        Dim resultado As DialogResult
+        resultado = OpenFileDialog1.ShowDialog(Me)
+        If resultado = DialogResult.OK Then
+            picBox_Poster.ImageLocation = OpenFileDialog1.FileName
+        End If
     End Sub
 
 
