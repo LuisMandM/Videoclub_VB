@@ -22,6 +22,7 @@ Partial Class Add_Persona_Form
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Add_Persona_Form))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.lbl_Nombre = New System.Windows.Forms.Label()
         Me.tbox_Name = New System.Windows.Forms.TextBox()
@@ -94,6 +95,7 @@ Partial Class Add_Persona_Form
         Me.BackColor = System.Drawing.SystemColors.ControlText
         Me.ClientSize = New System.Drawing.Size(452, 128)
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Add_Persona_Form"
         Me.Text = "Añadir"
         Me.TableLayoutPanel1.ResumeLayout(False)

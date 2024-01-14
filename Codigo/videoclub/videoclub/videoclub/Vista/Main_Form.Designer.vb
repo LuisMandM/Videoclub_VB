@@ -22,6 +22,7 @@ Partial Class Main_Form
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main_Form))
         Me.mstrip_Main = New System.Windows.Forms.MenuStrip()
         Me.VisualizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CrearToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -56,6 +57,7 @@ Partial Class Main_Form
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.mstrip_Main)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.mstrip_Main
         Me.Name = "Main_Form"

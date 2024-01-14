@@ -22,6 +22,7 @@ Partial Class Add_Role_Form
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Add_Role_Form))
         Me.tlp_Principal = New System.Windows.Forms.TableLayoutPanel()
         Me.btton_Create = New System.Windows.Forms.Button()
         Me.btton_Save = New System.Windows.Forms.Button()
@@ -154,6 +155,7 @@ Partial Class Add_Role_Form
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(585, 271)
         Me.Controls.Add(Me.tlp_Principal)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximumSize = New System.Drawing.Size(603, 318)
         Me.MinimumSize = New System.Drawing.Size(603, 318)
         Me.Name = "Add_Role_Form"

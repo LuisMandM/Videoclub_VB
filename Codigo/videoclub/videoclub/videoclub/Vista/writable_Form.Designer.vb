@@ -30,8 +30,8 @@ Partial Class writable_Form
         Me.btton_add_Director = New System.Windows.Forms.Button()
         Me.btton_add_Personaje = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btton_Save = New System.Windows.Forms.Button()
         Me.btton_Discard = New System.Windows.Forms.Button()
+        Me.btton_Save = New System.Windows.Forms.Button()
         Me.tlp_Principal.SuspendLayout()
         Me.tlp_DisplayContent.SuspendLayout()
         Me.tlp_Buttons.SuspendLayout()
@@ -147,19 +147,6 @@ Partial Class writable_Form
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(416, 44)
         Me.TableLayoutPanel1.TabIndex = 1
         '
-        'btton_Save
-        '
-        Me.btton_Save.BackColor = System.Drawing.Color.Yellow
-        Me.btton_Save.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btton_Save.Font = New System.Drawing.Font("Courier New", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btton_Save.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btton_Save.Location = New System.Drawing.Point(3, 3)
-        Me.btton_Save.Name = "btton_Save"
-        Me.btton_Save.Size = New System.Drawing.Size(202, 38)
-        Me.btton_Save.TabIndex = 0
-        Me.btton_Save.Text = "Guardar"
-        Me.btton_Save.UseVisualStyleBackColor = False
-        '
         'btton_Discard
         '
         Me.btton_Discard.BackColor = System.Drawing.Color.Yellow
@@ -172,6 +159,19 @@ Partial Class writable_Form
         Me.btton_Discard.TabIndex = 1
         Me.btton_Discard.Text = "Descartar"
         Me.btton_Discard.UseVisualStyleBackColor = False
+        '
+        'btton_Save
+        '
+        Me.btton_Save.BackColor = System.Drawing.Color.Yellow
+        Me.btton_Save.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btton_Save.Font = New System.Drawing.Font("Courier New", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btton_Save.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btton_Save.Location = New System.Drawing.Point(3, 3)
+        Me.btton_Save.Name = "btton_Save"
+        Me.btton_Save.Size = New System.Drawing.Size(202, 38)
+        Me.btton_Save.TabIndex = 0
+        Me.btton_Save.Text = "Guardar"
+        Me.btton_Save.UseVisualStyleBackColor = False
         '
         'writable_Form
         '
