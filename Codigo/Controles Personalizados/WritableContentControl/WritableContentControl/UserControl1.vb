@@ -34,9 +34,16 @@
             Return cbox_Director.SelectedItem
         End Get
         Set
-            For Each item In Value
-                cbox_Director.Items.Add(item)
-            Next
+            If Value Is Nothing Then
+                Console.WriteLine("value was nothing")
+            Else
+                If Value.Count > 0 Then
+                    For Each item In Value
+                        cbox_Director.Items.Add(item)
+                    Next
+                End If
+            End If
+
         End Set
     End Property
 
@@ -45,9 +52,18 @@
             Return cbox_Genero.SelectedItem
         End Get
         Set
-            For Each item In Value
-                cbox_Genero.Items.Add(item)
-            Next
+
+            If Value Is Nothing Then
+                Console.WriteLine("value was nothing")
+            Else
+                If Value.Count > 0 Then
+                    For Each item In Value
+                        cbox_Genero.Items.Add(item)
+                    Next
+                End If
+
+            End If
+
         End Set
     End Property
 
