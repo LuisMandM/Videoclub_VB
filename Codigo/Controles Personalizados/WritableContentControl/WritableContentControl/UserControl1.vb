@@ -2,6 +2,80 @@
     Private _dataSource As Object
     Private displayMember As String
     Private valueMember As String
+    Private _registro As String
+    Private _duracion As String
+    Private _productora As String
+    Private _sinopsis As String
+    Private _genero As List(Of String)
+    Private _director As List(Of String)
+    Private _poster As Image
+
+    Property poster As Image
+        Get
+            Return picBox_Poster.Image
+        End Get
+        Set
+            picBox_Poster.Image = Value
+        End Set
+    End Property
+
+    Property director As List(Of String)
+        Get
+            Return cbox_Director.SelectedItem
+        End Get
+        Set
+            For Each item In Value
+                cbox_Director.Items.Add(item)
+            Next
+        End Set
+    End Property
+
+    Property genero As List(Of String)
+        Get
+            Return cbox_Genero.SelectedItem
+        End Get
+        Set
+            For Each item In Value
+                cbox_Genero.Items.Add(item)
+            Next
+        End Set
+    End Property
+
+    Property sinopsis As String
+        Get
+            Return tbox_Sinopsis.Text
+        End Get
+        Set
+            tbox_Sinopsis.Text = Value
+        End Set
+    End Property
+
+    Property productora As String
+        Get
+            Return tbox_Productora.Text
+        End Get
+        Set
+            tbox_Productora.Text = Value
+        End Set
+    End Property
+
+    Property duracion As String
+        Get
+            Return tbox_Duracion.Text
+        End Get
+        Set
+            tbox_Duracion.Text = Value
+        End Set
+    End Property
+
+    Property registro As String
+        Get
+            Return tbox_Registro.Text
+        End Get
+        Set
+            tbox_Registro.Text = Value
+        End Set
+    End Property
 
     Public Event clickLoad()
 
