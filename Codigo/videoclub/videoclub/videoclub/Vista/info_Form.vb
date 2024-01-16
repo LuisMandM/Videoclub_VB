@@ -22,23 +22,6 @@ Public Class info_Form
         wcontent.genero = New List(Of String) From {v_movie.genero.ToString}
         wcontent.director = New List(Of String) From {v_movie.director.nombre}
         'SetEnable()
-
-        'Dim con As New SQLiteConnection(My.Settings.conexion_db)
-        'Dim consulta As String = "SELECT D.NOMBRE AS ""Actor"", A.NOMBRE AS ""Personaje"" FROM PERSONAJES A JOIN ACTORES D ON(D.id = A.actor)"
-        'Try
-        '    con.Open()
-        '    Dim cmd As New SQLiteCommand(consulta, con)
-        '    Dim da As New SQLiteDataAdapter(cmd)
-        '    Dim ds As New DataSet()
-        '    ds.Tables.Add("tabla")
-        '    da.Fill(ds.Tables("tabla"))
-        '    dataGrid_Roles.DataSource = ds.Tables("tabla")
-        '    dataGrid_Roles.Dock = DockStyle.Fill
-        '    con.Close()
-        'Catch ex As Exception
-        '    MsgBox("Problemas con la BBDD")
-        'End Try
-
         dataGrid_Roles.DataSource = reader.ReadingRolesDataSet(v_movie.id)
 
     End Sub
@@ -46,5 +29,10 @@ Public Class info_Form
 
     Private Sub SetEnable()
         wcontent.Enabled = False
+    End Sub
+
+    Private Sub btton_Close_Click(sender As Object, e As EventArgs) Handles btton_Close.Click
+        Main_Form.InsertarFormulario(Views_Form.GetInstance)
+        Views_Form.GetInstance().CargarDatos()
     End Sub
 End Class

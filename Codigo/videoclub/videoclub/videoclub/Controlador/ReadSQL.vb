@@ -158,7 +158,6 @@ Public Class ReadSQL
             Dim ds As New DataSet()
             ds.Tables.Add("tabla")
             da.Fill(ds.Tables("tabla"))
-            'dataGrid_Roles.DataSource = ds.Tables("tabla")
             con.Close()
             Return ds.Tables("tabla")
         Catch ex As Exception
