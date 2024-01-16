@@ -147,5 +147,23 @@ Public Class ReadSQL
 
     End Function
 
+    Function ReadingRolesDataSet(id As Integer)
+        Dim con As New SQLiteConnection(My.Settings.conexion_db)
+        Dim consulta As String = "SELECT D.NOMBRE AS ""Actor"", A.NOMBRE AS ""Personaje"" FROM PERSONAJES A JOIN ACTORES D ON(D.id = A.actor)  WHERE A.pelicula = @id"
+        Try
+            con.Open()
+            Dim cmd As New SQLiteCommand(consulta, con)
+            cmd.Parameters.Add("@id", DbType.Int64).Value = id
+            Dim da As New SQLiteDataAdapter(cmd)
+            Dim ds As New DataSet()
+            ds.Tables.Add("tabla")
+            da.Fill(ds.Tables("tabla"))
+            'dataGrid_Roles.DataSource = ds.Tables("tabla")
+            con.Close()
+            Return ds.Tables("tabla")
+        Catch ex As Exception
+            MsgBox("Problemas con la BBDD")
+        End Try
+    End Function
 
 End Class

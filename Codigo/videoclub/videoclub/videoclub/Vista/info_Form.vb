@@ -23,21 +23,23 @@ Public Class info_Form
         wcontent.director = New List(Of String) From {v_movie.director.nombre}
         'SetEnable()
 
-        Dim con As New SQLiteConnection(My.Settings.conexion_db)
-        Dim consulta As String = "SELECT D.NOMBRE AS ""Actor"", A.NOMBRE AS ""Personaje"" FROM PERSONAJES A JOIN ACTORES D ON(D.id = A.actor)"
-        Try
-            con.Open()
-            Dim cmd As New SQLiteCommand(consulta, con)
-            Dim da As New SQLiteDataAdapter(cmd)
-            Dim ds As New DataSet()
-            ds.Tables.Add("tabla")
-            da.Fill(ds.Tables("tabla"))
-            dataGrid_Roles.DataSource = ds.Tables("tabla")
-            dataGrid_Roles.Dock = DockStyle.Fill
-            con.Close()
-        Catch ex As Exception
-            MsgBox("Problemas con la BBDD")
-        End Try
+        'Dim con As New SQLiteConnection(My.Settings.conexion_db)
+        'Dim consulta As String = "SELECT D.NOMBRE AS ""Actor"", A.NOMBRE AS ""Personaje"" FROM PERSONAJES A JOIN ACTORES D ON(D.id = A.actor)"
+        'Try
+        '    con.Open()
+        '    Dim cmd As New SQLiteCommand(consulta, con)
+        '    Dim da As New SQLiteDataAdapter(cmd)
+        '    Dim ds As New DataSet()
+        '    ds.Tables.Add("tabla")
+        '    da.Fill(ds.Tables("tabla"))
+        '    dataGrid_Roles.DataSource = ds.Tables("tabla")
+        '    dataGrid_Roles.Dock = DockStyle.Fill
+        '    con.Close()
+        'Catch ex As Exception
+        '    MsgBox("Problemas con la BBDD")
+        'End Try
+
+        dataGrid_Roles.DataSource = reader.ReadingRolesDataSet(v_movie.id)
 
     End Sub
 
