@@ -37,4 +37,9 @@
         formulario.Text = "Añadir Director"
         formulario.Show()
     End Sub
+
+    Public Sub ShowInfoView()
+        InsertarFormulario(info_Form.GetInstance)
+
+    End Sub
 End Class

@@ -1,6 +1,16 @@
 ﻿Public Class DetailView
     Private _titulo As String
     Private _contenido As String
+    Private _id_Movie As String
+
+    Property id_Movie As String
+        Get
+            Return _id_Movie
+        End Get
+        Set
+            _id_Movie = Value
+        End Set
+    End Property
 
     Property contenido As String
         Get

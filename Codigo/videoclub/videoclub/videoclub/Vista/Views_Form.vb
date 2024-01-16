@@ -45,7 +45,7 @@ Public Class Views_Form
 
 
 
-            AddHandler v_movie.clickView, AddressOf show
+            AddHandler v_movie.clickView, AddressOf show_Info
             AddHandler v_movie.clickEdit, AddressOf show
             AddHandler v_movie.clickDelete, AddressOf show
 
@@ -55,8 +55,8 @@ Public Class Views_Form
         Me.Controls.Add(tlpMovies)
     End Sub
 
-    Sub show()
-        MsgBox("Works")
+    Sub show_Info()
+        Main_Form.ShowInfoView()
     End Sub
 
 End Class
