@@ -1,4 +1,5 @@
-﻿Imports System.Security.Cryptography.X509Certificates
+﻿Imports System.ComponentModel
+Imports System.Security.Cryptography.X509Certificates
 Imports DetailPreView
 
 Public Class Views_Form
@@ -41,11 +42,21 @@ Public Class Views_Form
             }
             tlpMovies.RowStyles.Add(New RowStyle(AutoSize))
             tlpMovies.Controls.Add(v_movie, 0, i)
+
+
+
+            AddHandler v_movie.clickView, AddressOf show
+            AddHandler v_movie.clickEdit, AddressOf show
+            AddHandler v_movie.clickDelete, AddressOf show
+
             i = i + 1
         Next
         tlpMovies.RowStyles.Add(New RowStyle(SizeType.Percent, 100.0!))
         Me.Controls.Add(tlpMovies)
     End Sub
 
+    Sub show()
+        MsgBox("Works")
+    End Sub
 
 End Class
