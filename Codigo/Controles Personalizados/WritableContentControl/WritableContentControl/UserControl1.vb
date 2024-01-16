@@ -9,6 +9,16 @@
     Private _genero As List(Of String)
     Private _director As List(Of String)
     Private _poster As Image
+    Private _nombre As String
+
+    Property nombre As String
+        Get
+            Return lbl_Name.Text
+        End Get
+        Set
+            lbl_Name.Text = Value
+        End Set
+    End Property
 
     Property poster As Image
         Get

@@ -36,6 +36,7 @@ Partial Class WritableContent
         Me.tbox_Sinopsis = New System.Windows.Forms.TextBox()
         Me.cbox_Director = New System.Windows.Forms.ComboBox()
         Me.cbox_Genero = New System.Windows.Forms.ComboBox()
+        Me.lbl_Name = New System.Windows.Forms.Label()
         Me.picBox_Poster = New System.Windows.Forms.PictureBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.tlp_Principal.SuspendLayout()
@@ -75,6 +76,7 @@ Partial Class WritableContent
         Me.tlp_WritableContent.Controls.Add(Me.tbox_Sinopsis, 1, 6)
         Me.tlp_WritableContent.Controls.Add(Me.cbox_Director, 1, 2)
         Me.tlp_WritableContent.Controls.Add(Me.cbox_Genero, 1, 5)
+        Me.tlp_WritableContent.Controls.Add(Me.lbl_Name, 1, 0)
         Me.tlp_WritableContent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_WritableContent.Location = New System.Drawing.Point(3, 3)
         Me.tlp_WritableContent.Name = "tlp_WritableContent"
@@ -240,6 +242,19 @@ Partial Class WritableContent
         Me.cbox_Genero.Size = New System.Drawing.Size(354, 25)
         Me.cbox_Genero.TabIndex = 14
         '
+        'lbl_Name
+        '
+        Me.lbl_Name.AutoSize = True
+        Me.lbl_Name.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lbl_Name.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Name.ForeColor = System.Drawing.Color.Yellow
+        Me.lbl_Name.Location = New System.Drawing.Point(157, 0)
+        Me.lbl_Name.Name = "lbl_Name"
+        Me.lbl_Name.Size = New System.Drawing.Size(354, 62)
+        Me.lbl_Name.TabIndex = 15
+        Me.lbl_Name.Text = "Movie"
+        Me.lbl_Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'picBox_Poster
         '
         Me.picBox_Poster.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -289,4 +304,5 @@ Partial Class WritableContent
     Friend WithEvents cbox_Genero As ComboBox
     Friend WithEvents picBox_Poster As PictureBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents lbl_Name As Label
 End Class

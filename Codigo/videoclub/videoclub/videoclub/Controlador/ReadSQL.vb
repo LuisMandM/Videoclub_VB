@@ -101,7 +101,9 @@ Public Class ReadSQL
             cmd.Parameters.Add("@id", DbType.Int64).Value = id
             Dim lector As SQLiteDataReader = cmd.ExecuteReader()
             While lector.Read()
-                'resultado = New Pelicula(id:=lector.GetInt64(0), nombre:=)
+                resultado = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)),
+                                              duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=Controller.genero_Enum.genero.DRAMA, sinopsis:=lector.GetString(5))
+
             End While
             lector.Close()
             conexion.Close()
