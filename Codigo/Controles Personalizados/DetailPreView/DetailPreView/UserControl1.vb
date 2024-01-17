@@ -1,7 +1,10 @@
-﻿Public Class DetailView
+﻿Imports System.Deployment.Internal
+
+Public Class DetailView
     Private _titulo As String
     Private _contenido As String
     Private _id_Movie As String
+
 
     Property id_Movie As String
         Get
@@ -21,6 +24,7 @@
         End Set
     End Property
 
+    Public Event MyclickView As EventHandler(Of ButtonClickEventArgs)
     Public Event clickEdit()
     Public Event clickView()
     Public Event clickDelete()
@@ -45,7 +49,8 @@
     End Property
 
     Private Sub btton_View_Click(sender As Object, e As EventArgs) Handles btton_View.Click
-        RaiseEvent clickView()
+        Dim movie As Integer = id_Movie
+        RaiseEvent MyclickView(Me, New ButtonClickEventArgs(movie))
     End Sub
 
     Private Sub btton_Edit_Click(sender As Object, e As EventArgs) Handles btton_Edit.Click
@@ -55,4 +60,14 @@
     Private Sub btton_Delete_Click(sender As Object, e As EventArgs) Handles btton_Delete.Click
         RaiseEvent clickDelete()
     End Sub
+End Class
+
+Public Class ButtonClickEventArgs
+    Inherits EventArgs
+
+    Public Sub New(id As Integer)
+        Me.Id_Movie = id
+    End Sub
+
+    Public ReadOnly Property Id_Movie As Integer
 End Class

@@ -45,10 +45,9 @@ Public Class Views_Form
             tlpMovies.Controls.Add(v_movie, 0, i)
 
 
-
             AddHandler v_movie.clickView, AddressOf show_Info
-            AddHandler v_movie.clickEdit, AddressOf show
-            AddHandler v_movie.clickDelete, AddressOf show
+            AddHandler v_movie.clickEdit, AddressOf Show
+            AddHandler v_movie.clickDelete, AddressOf Show
 
             i = i + 1
         Next

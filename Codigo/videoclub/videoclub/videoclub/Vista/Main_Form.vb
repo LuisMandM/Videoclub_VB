@@ -24,6 +24,7 @@
     Private Sub smi_Visualizar_Click(sender As Object, e As EventArgs) Handles smi_Visualizar.Click
         InsertarFormulario(Views_Form.GetInstance)
         Views_Form.GetInstance().CargarDatos()
+
     End Sub
 
     Private Sub smi_Actor_Click(sender As Object, e As EventArgs) Handles smi_Actor.Click

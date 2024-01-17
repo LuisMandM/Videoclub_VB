@@ -34,5 +34,6 @@ Public Class info_Form
     Private Sub btton_Close_Click(sender As Object, e As EventArgs) Handles btton_Close.Click
         Main_Form.InsertarFormulario(Views_Form.GetInstance)
         Views_Form.GetInstance().CargarDatos()
+
     End Sub
 End Class
