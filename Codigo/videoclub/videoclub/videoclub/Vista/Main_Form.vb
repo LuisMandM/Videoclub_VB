@@ -39,7 +39,7 @@
         formulario.Show()
     End Sub
 
-    Public Sub ShowInfoView()
-        InsertarFormulario(info_Form.GetInstance)
+    Public Sub ShowInfoView(movie As Integer)
+        InsertarFormulario(info_Form.GetInstance(movie))
     End Sub
 End Class

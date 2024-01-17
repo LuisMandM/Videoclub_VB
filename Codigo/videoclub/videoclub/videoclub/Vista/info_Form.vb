@@ -4,11 +4,11 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Public Class info_Form
     Shared formulario As info_Form
     Dim reader As New ReadSQL
-    Shared Function GetInstance() As info_Form
+    Shared Function GetInstance(id As Integer) As info_Form
         If formulario Is Nothing Then
             formulario = New info_Form
         End If
-        formulario.Cargar_Datos(1)
+        formulario.Cargar_Datos(id)
         Return formulario
     End Function
 

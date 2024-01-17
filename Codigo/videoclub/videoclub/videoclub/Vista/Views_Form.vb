@@ -45,7 +45,7 @@ Public Class Views_Form
             tlpMovies.Controls.Add(v_movie, 0, i)
 
 
-            AddHandler v_movie.clickView, AddressOf show_Info
+            AddHandler v_movie.MyclickView, AddressOf show_Info
             AddHandler v_movie.clickEdit, AddressOf Show
             AddHandler v_movie.clickDelete, AddressOf Show
 
@@ -55,9 +55,9 @@ Public Class Views_Form
         Me.Controls.Add(tlpMovies)
     End Sub
 
-    Sub show_Info()
-
-        Main_Form.ShowInfoView()
+    Sub show_Info(sender As Object, e As ButtonClickEventArgs)
+        MsgBox(String.Format("El id de esta movie es {0}", e.Id_Movie))
+        Main_Form.ShowInfoView(e.Id_Movie)
     End Sub
 
 End Class
