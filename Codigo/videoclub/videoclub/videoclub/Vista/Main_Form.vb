@@ -13,9 +13,9 @@
         formulario.MdiParent = Me
         formulario.Dock = DockStyle.Fill
         formulario.Show()
-    End Sub MySub()
+    End Sub
 
-End Sub
+
 
     Private Sub smi_Pelicula_Click(sender As Object, e As EventArgs) Handles smi_Pelicula.Click
         InsertarFormulario(writable_Form.GetInstance)
@@ -23,6 +23,8 @@ End Sub
 
     Private Sub smi_Visualizar_Click(sender As Object, e As EventArgs) Handles smi_Visualizar.Click
         InsertarFormulario(Views_Form.GetInstance)
+        Views_Form.GetInstance().CargarDatos()
+
     End Sub
 
     Private Sub smi_Actor_Click(sender As Object, e As EventArgs) Handles smi_Actor.Click
@@ -35,5 +37,9 @@ End Sub
         Dim formulario = Add_Persona_Form
         formulario.Text = "Añadir Director"
         formulario.Show()
+    End Sub
+
+    Public Sub ShowInfoView(movie As Integer)
+        InsertarFormulario(info_Form.GetInstance(movie))
     End Sub
 End Class
