@@ -6,10 +6,49 @@
     Private _duracion As String
     Private _productora As String
     Private _sinopsis As String
-    Property genero As List(Of String)
-    Private _director As List(Of String)
     Private _poster As Image
     Private _nombre As String
+    Private _genero As List(Of String)
+    Private _director As List(Of String)
+
+
+    Property director As List(Of String)
+        Get
+            Return cbox_Director.SelectedItem
+        End Get
+        Set
+            If Value Is Nothing Then
+                Console.WriteLine("value was nothing")
+            Else
+                If Value.Count > 0 Then
+                    For Each item In Value
+                        cbox_Director.Items.Add(item)
+                    Next
+                End If
+            End If
+
+        End Set
+    End Property
+
+    Property genero As List(Of String)
+        Get
+            Return cbox_Genero.SelectedItem
+        End Get
+        Set
+
+            If Value Is Nothing Then
+                Console.WriteLine("value was nothing")
+            Else
+                If Value.Count > 0 And cbox_Genero.Items.Count < 6 Then
+                    For Each item In Value
+                        cbox_Genero.Items.Add(item)
+                    Next
+                End If
+
+            End If
+
+        End Set
+    End Property
 
     Property nombre As String
         Get
@@ -58,6 +97,33 @@
     End Property
 
     Public Event clickLoad()
+
+    Public Property DataSource As Object
+        Get
+            Return cbox_Director.DataSource
+        End Get
+        Set(value As Object)
+            cbox_Director.DataSource = value
+        End Set
+    End Property
+
+    Public Property DisplayMember1 As String
+        Get
+            Return cbox_Director.DisplayMember
+        End Get
+        Set(value As String)
+            cbox_Director.DisplayMember = value
+        End Set
+    End Property
+
+    Public Property ValueMember1 As String
+        Get
+            Return cbox_Director.ValueMember
+        End Get
+        Set(value As String)
+            cbox_Director.ValueMember = value
+        End Set
+    End Property
 
 
     Public Overrides Property MinimumSize As Size

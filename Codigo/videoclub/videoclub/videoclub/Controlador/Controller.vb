@@ -35,4 +35,11 @@ Public Class Controller
 
     End Structure
 
+    Public Function enumString()
+        Dim generos As New List(Of String)
+        For Each item In [Enum].GetValues(GetType(genero_Enum.genero))
+            generos.Add(item.ToString)
+        Next
+        Return generos
+    End Function
 End Class

@@ -42,4 +42,8 @@
     Public Sub ShowInfoView(movie As Integer)
         InsertarFormulario(info_Form.GetInstance(movie))
     End Sub
+
+    Public Sub ShowEditView(movie As Integer)
+        InsertarFormulario(writable_Form.GetInstance(movie))
+    End Sub
 End Class

@@ -1,23 +1,41 @@
 ﻿Imports System.Diagnostics.Eventing
 Imports System.Runtime.Remoting.Contexts
+Imports videoclub.Controller
 
 Public Class writable_Form
 
     Shared formulario As writable_Form
-    Dim reader As ReadSQL
+    Private reader As New ReadSQL
+    Dim controller As New Controller
+    Shared Function GetInstance(id As Integer) As writable_Form
+        If formulario Is Nothing Then
+            formulario = New writable_Form
+        End If
+        formulario.discardChanges()
+        formulario.Cargar_Datos(id)
+        Return formulario
+    End Function
     Shared Function GetInstance() As writable_Form
         If formulario Is Nothing Then
             formulario = New writable_Form
         End If
+        formulario.btton_add_Personaje.Enabled = False
+        formulario.btton_add_Personaje.Visible = False
+        formulario.discardChanges()
         Return formulario
     End Function
 
     Sub Cargar_Datos(id_Movie As Integer)
-        Dim v_movie As Pelicula = Reader.ReadPelicula_Single(id_Movie)
+        Dim v_movie As Pelicula = reader.ReadPelicula_Single(id_Movie)
         creationCtrl.nombre = v_movie.nombre
         creationCtrl.duracion = v_movie.duracion
         creationCtrl.productora = v_movie.productora
         creationCtrl.sinopsis = v_movie.sinopsis
+        'creationCtrl.DataSource = reader.ReadingDirectorsDataSource
+        'creationCtrl.DisplayMember1 = "nombre"
+        'creationCtrl.ValueMember1 = "id"
+        'creationCtrl.genero = controller.enumString
+
 
         'content.nombre = v_movie.nombre
         'wcontent.productora = v_movie.productora
@@ -28,5 +46,22 @@ Public Class writable_Form
         'SetEnable()
         'dataGrid_Roles.DataSource = reader.ReadingRolesDataSet(v_movie.id)
 
+    End Sub
+
+    Sub discardChanges()
+        creationCtrl.nombre = ""
+        creationCtrl.duracion = ""
+        creationCtrl.productora = ""
+        creationCtrl.sinopsis = ""
+        creationCtrl.DataSource = reader.ReadingDirectorsDataSource
+        creationCtrl.DisplayMember1 = "nombre"
+        creationCtrl.ValueMember1 = "id"
+        creationCtrl.genero = Nothing
+        creationCtrl.genero = controller.enumString
+    End Sub
+
+    Private Sub btton_Discard_Click(sender As Object, e As EventArgs) Handles btton_Discard.Click
+        discardChanges()
+        Main_Form.InsertarFormulario(Init_Form.GetInstance())
     End Sub
 End Class

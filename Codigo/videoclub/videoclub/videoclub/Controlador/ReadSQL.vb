@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SQLite
 Imports System.IO
 Imports System.Linq.Expressions
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class ReadSQL
 
@@ -165,4 +166,25 @@ Public Class ReadSQL
         End Try
     End Function
 
+
+    Function ReadingDirectorsDataSource()
+        Dim con As New SQLiteConnection(My.Settings.conexion_db)
+        Dim consulta As String = "SELECT ID, NOMBRE FROM DIRECTORES"
+        Try
+            con.Open()
+            Dim cmd As New SQLiteCommand(consulta, con)
+            Dim da As New SQLiteDataAdapter(cmd)
+            Dim ds As New DataSet()
+            ds.Tables.Add("tabla")
+            da.Fill(ds.Tables("tabla"))
+
+            'ComboBox1.DataSource = ds.Tables("tabla")
+            'ComboBox1.DisplayMember = "titulo"
+            'ComboBox1.ValueMember = "id"
+            con.Close()
+            Return ds.Tables("Tabla")
+        Catch ex As Exception
+            MsgBox("Problemas con la BBDD")
+        End Try
+    End Function
 End Class
