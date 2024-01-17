@@ -67,11 +67,19 @@ Partial Class info_Form
         '
         Me.wcontent.BackColor = System.Drawing.SystemColors.ControlText
         Me.wcontent.DataSource = Nothing
+        Me.wcontent.director = Nothing
         Me.wcontent.DisplayMember1 = ""
         Me.wcontent.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.wcontent.duracion = ""
+        Me.wcontent.genero = Nothing
         Me.wcontent.Location = New System.Drawing.Point(3, 3)
         Me.wcontent.MinimumSize = New System.Drawing.Size(317, 440)
         Me.wcontent.Name = "wcontent"
+        Me.wcontent.nombre = "Movie"
+        Me.wcontent.poster = Nothing
+        Me.wcontent.productora = ""
+        Me.wcontent.registro = ""
+        Me.wcontent.sinopsis = ""
         Me.wcontent.Size = New System.Drawing.Size(880, 440)
         Me.wcontent.TabIndex = 0
         Me.wcontent.ValueMember1 = ""
