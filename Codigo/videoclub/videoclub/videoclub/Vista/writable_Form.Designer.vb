@@ -73,15 +73,12 @@ Partial Class writable_Form
         'wcontent
         '
         Me.wcontent.BackColor = System.Drawing.SystemColors.ControlText
-        Me.wcontent.DataSource = Nothing
-        Me.wcontent.DisplayMember1 = ""
         Me.wcontent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.wcontent.Location = New System.Drawing.Point(3, 3)
         Me.wcontent.MinimumSize = New System.Drawing.Size(317, 440)
         Me.wcontent.Name = "wcontent"
         Me.wcontent.Size = New System.Drawing.Size(880, 440)
         Me.wcontent.TabIndex = 0
-        Me.wcontent.ValueMember1 = ""
         '
         'tlp_Buttons
         '
