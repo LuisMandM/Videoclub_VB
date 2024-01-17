@@ -12,9 +12,30 @@
     Private _director As List(Of String)
 
 
-    Property director As List(Of String)
+    Private _id As Integer
+    Private _selected_gender As String
+
+    Property selected_gender As String
         Get
-            Return cbox_Director.SelectedItem
+            Return cbox_Genero.SelectedItem.ToString
+        End Get
+        Set
+            _selected_gender = Value
+        End Set
+    End Property
+
+    Property id As Integer
+        Get
+            Return _id
+        End Get
+        Set
+            _id = Value
+        End Set
+    End Property
+
+    Property director As String
+        Get
+            Return cbox_Director.SelectedValue
         End Get
         Set
             If Value Is Nothing Then
@@ -32,7 +53,7 @@
 
     Property genero As List(Of String)
         Get
-            Return cbox_Genero.SelectedItem
+            Return _genero
         End Get
         Set
 
