@@ -25,10 +25,10 @@ Partial Class writable_Form
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(writable_Form))
         Me.tlp_Principal = New System.Windows.Forms.TableLayoutPanel()
         Me.tlp_DisplayContent = New System.Windows.Forms.TableLayoutPanel()
-        Me.wcontent = New WritableContentControl.WritableContent()
         Me.tlp_Buttons = New System.Windows.Forms.TableLayoutPanel()
         Me.btton_add_Director = New System.Windows.Forms.Button()
         Me.btton_add_Personaje = New System.Windows.Forms.Button()
+        Me.creationCtrl = New CreationContentControl.CreationContentControl()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.btton_Discard = New System.Windows.Forms.Button()
         Me.btton_Save = New System.Windows.Forms.Button()
@@ -59,8 +59,8 @@ Partial Class writable_Form
         Me.tlp_DisplayContent.ColumnCount = 2
         Me.tlp_DisplayContent.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.0!))
         Me.tlp_DisplayContent.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
-        Me.tlp_DisplayContent.Controls.Add(Me.wcontent, 0, 0)
         Me.tlp_DisplayContent.Controls.Add(Me.tlp_Buttons, 1, 0)
+        Me.tlp_DisplayContent.Controls.Add(Me.creationCtrl, 0, 0)
         Me.tlp_DisplayContent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_DisplayContent.Location = New System.Drawing.Point(3, 3)
         Me.tlp_DisplayContent.Name = "tlp_DisplayContent"
@@ -69,19 +69,6 @@ Partial Class writable_Form
         Me.tlp_DisplayContent.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 443.0!))
         Me.tlp_DisplayContent.Size = New System.Drawing.Size(1266, 443)
         Me.tlp_DisplayContent.TabIndex = 0
-        '
-        'wcontent
-        '
-        Me.wcontent.BackColor = System.Drawing.SystemColors.ControlText
-        Me.wcontent.DataSource = Nothing
-        Me.wcontent.DisplayMember1 = ""
-        Me.wcontent.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.wcontent.Location = New System.Drawing.Point(3, 3)
-        Me.wcontent.MinimumSize = New System.Drawing.Size(317, 440)
-        Me.wcontent.Name = "wcontent"
-        Me.wcontent.Size = New System.Drawing.Size(880, 440)
-        Me.wcontent.TabIndex = 0
-        Me.wcontent.ValueMember1 = ""
         '
         'tlp_Buttons
         '
@@ -132,6 +119,21 @@ Partial Class writable_Form
         Me.btton_add_Personaje.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btton_add_Personaje.UseVisualStyleBackColor = False
         '
+        'creationCtrl
+        '
+        Me.creationCtrl.BackColor = System.Drawing.SystemColors.ControlText
+        Me.creationCtrl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.creationCtrl.duracion = ""
+        Me.creationCtrl.Location = New System.Drawing.Point(3, 3)
+        Me.creationCtrl.MinimumSize = New System.Drawing.Size(317, 440)
+        Me.creationCtrl.Name = "creationCtrl"
+        Me.creationCtrl.nombre = ""
+        Me.creationCtrl.poster = Nothing
+        Me.creationCtrl.productora = ""
+        Me.creationCtrl.sinopsis = ""
+        Me.creationCtrl.Size = New System.Drawing.Size(880, 440)
+        Me.creationCtrl.TabIndex = 2
+        '
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 2
@@ -143,7 +145,7 @@ Partial Class writable_Form
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(416, 44)
         Me.TableLayoutPanel1.TabIndex = 1
         '
@@ -193,11 +195,11 @@ Partial Class writable_Form
 
     Friend WithEvents tlp_Principal As TableLayoutPanel
     Friend WithEvents tlp_DisplayContent As TableLayoutPanel
-    Friend WithEvents wcontent As WritableContentControl.WritableContent
     Friend WithEvents tlp_Buttons As TableLayoutPanel
     Friend WithEvents btton_add_Personaje As Button
     Friend WithEvents btton_add_Director As Button
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents btton_Save As Button
     Friend WithEvents btton_Discard As Button
+    Friend WithEvents creationCtrl As CreationContentControl.CreationContentControl
 End Class

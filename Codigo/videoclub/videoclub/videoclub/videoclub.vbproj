@@ -213,6 +213,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Controles Personalizados\CreationContentControl\CreationContentControl\CreationContentControl.vbproj">
+      <Project>{5C275406-FC8F-4CFE-8B1B-9D1ACC5D2717}</Project>
+      <Name>CreationContentControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Controles Personalizados\DetailPreView\DetailPreView\DetailPreView.vbproj">
       <Project>{5AD8BB47-662C-4BEC-9AD4-203B70CC3C9A}</Project>
       <Name>DetailPreView</Name>
