@@ -30,7 +30,7 @@ Partial Class CreationContentControl
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.tbox_Registro = New System.Windows.Forms.TextBox()
+        Me.tbox_Nombre = New System.Windows.Forms.TextBox()
         Me.tbox_Duracion = New System.Windows.Forms.TextBox()
         Me.tbox_Productora = New System.Windows.Forms.TextBox()
         Me.tbox_Sinopsis = New System.Windows.Forms.TextBox()
@@ -69,7 +69,7 @@ Partial Class CreationContentControl
         Me.tlp_WritableContent.Controls.Add(Me.Label5, 0, 4)
         Me.tlp_WritableContent.Controls.Add(Me.Label6, 0, 5)
         Me.tlp_WritableContent.Controls.Add(Me.Label7, 0, 6)
-        Me.tlp_WritableContent.Controls.Add(Me.tbox_Registro, 1, 1)
+        Me.tlp_WritableContent.Controls.Add(Me.tbox_Nombre, 1, 1)
         Me.tlp_WritableContent.Controls.Add(Me.tbox_Duracion, 1, 3)
         Me.tlp_WritableContent.Controls.Add(Me.tbox_Productora, 1, 4)
         Me.tlp_WritableContent.Controls.Add(Me.tbox_Sinopsis, 1, 6)
@@ -167,17 +167,17 @@ Partial Class CreationContentControl
         Me.Label7.Text = "Sinopsis"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'tbox_Registro
+        'tbox_Nombre
         '
-        Me.tbox_Registro.BackColor = System.Drawing.Color.DimGray
-        Me.tbox_Registro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbox_Registro.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tbox_Registro.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbox_Registro.ForeColor = System.Drawing.SystemColors.Window
-        Me.tbox_Registro.Location = New System.Drawing.Point(157, 65)
-        Me.tbox_Registro.Name = "tbox_Registro"
-        Me.tbox_Registro.Size = New System.Drawing.Size(354, 24)
-        Me.tbox_Registro.TabIndex = 7
+        Me.tbox_Nombre.BackColor = System.Drawing.Color.DimGray
+        Me.tbox_Nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbox_Nombre.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbox_Nombre.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbox_Nombre.ForeColor = System.Drawing.SystemColors.Window
+        Me.tbox_Nombre.Location = New System.Drawing.Point(157, 65)
+        Me.tbox_Nombre.Name = "tbox_Nombre"
+        Me.tbox_Nombre.Size = New System.Drawing.Size(354, 24)
+        Me.tbox_Nombre.TabIndex = 7
         '
         'tbox_Duracion
         '
@@ -281,7 +281,7 @@ Partial Class CreationContentControl
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents tbox_Registro As TextBox
+    Friend WithEvents tbox_Nombre As TextBox
     Friend WithEvents tbox_Duracion As TextBox
     Friend WithEvents tbox_Productora As TextBox
     Friend WithEvents tbox_Sinopsis As TextBox
