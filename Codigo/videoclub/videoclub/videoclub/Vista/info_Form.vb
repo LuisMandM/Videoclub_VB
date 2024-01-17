@@ -28,7 +28,7 @@ Public Class info_Form
 
 
     Private Sub SetEnable()
-        wcontent.Enabled = False
+
     End Sub
 
     Private Sub btton_Close_Click(sender As Object, e As EventArgs) Handles btton_Close.Click

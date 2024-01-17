@@ -66,10 +66,10 @@ Partial Class info_Form
         'wcontent
         '
         Me.wcontent.BackColor = System.Drawing.SystemColors.ControlText
-        Me.wcontent.director = Nothing
+        Me.wcontent.director = ""
         Me.wcontent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.wcontent.duracion = ""
-        Me.wcontent.genero = Nothing
+        Me.wcontent.genero = ""
         Me.wcontent.Location = New System.Drawing.Point(3, 3)
         Me.wcontent.MinimumSize = New System.Drawing.Size(317, 440)
         Me.wcontent.Name = "wcontent"

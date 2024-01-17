@@ -33,3 +33,6 @@ D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub
 D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\bin\Debug\DetailPreView.dll
 D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\bin\Debug\DetailPreView.pdb
 D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\bin\Debug\DetailPreView.xml
+D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\bin\Debug\CreationContentControl.dll
+D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\bin\Debug\CreationContentControl.pdb
+D:\Luis\DAM\2_Curso\Desarrollo de Interfaces\Proyecto\Codigo\videoclub\videoclub\videoclub\bin\Debug\CreationContentControl.xml

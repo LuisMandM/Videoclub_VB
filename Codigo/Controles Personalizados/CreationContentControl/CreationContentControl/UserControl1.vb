@@ -6,7 +6,7 @@
     Private _duracion As String
     Private _productora As String
     Private _sinopsis As String
-    Private _genero As List(Of String)
+    Property genero As List(Of String)
     Private _director As List(Of String)
     Private _poster As Image
     Private _nombre As String
