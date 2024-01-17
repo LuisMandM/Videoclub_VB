@@ -19,8 +19,8 @@ Public Class info_Form
         wcontent.productora = v_movie.productora
         wcontent.duracion = String.Format("{0} min", v_movie.duracion.ToString)
         wcontent.sinopsis = v_movie.sinopsis
-        wcontent.genero = New List(Of String) From {v_movie.genero.ToString}
-        wcontent.director = New List(Of String) From {v_movie.director.nombre}
+        wcontent.genero = v_movie.genero.ToString
+        wcontent.director = v_movie.director.nombre
         'SetEnable()
         dataGrid_Roles.DataSource = reader.ReadingRolesDataSet(v_movie.id)
 

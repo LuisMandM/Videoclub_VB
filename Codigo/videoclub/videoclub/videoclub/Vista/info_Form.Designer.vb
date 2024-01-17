@@ -66,9 +66,7 @@ Partial Class info_Form
         'wcontent
         '
         Me.wcontent.BackColor = System.Drawing.SystemColors.ControlText
-        Me.wcontent.DataSource = Nothing
         Me.wcontent.director = Nothing
-        Me.wcontent.DisplayMember1 = ""
         Me.wcontent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.wcontent.duracion = ""
         Me.wcontent.genero = Nothing
@@ -82,7 +80,6 @@ Partial Class info_Form
         Me.wcontent.sinopsis = ""
         Me.wcontent.Size = New System.Drawing.Size(880, 440)
         Me.wcontent.TabIndex = 0
-        Me.wcontent.ValueMember1 = ""
         '
         'dataGrid_Roles
         '
