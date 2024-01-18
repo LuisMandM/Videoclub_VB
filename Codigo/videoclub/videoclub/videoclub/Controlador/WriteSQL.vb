@@ -50,21 +50,19 @@ Public Class WriteSQL
         End Try
     End Sub
 
-    Sub AddPelicula(pelicula As Pelicula)
+    Sub AddPelicula(nombre As String, duracion As String, productora As String, sinopsis As String, genero As String, director As Integer)
         Dim con As SQLiteConnection = New SQLiteConnection(My.Settings.conexion_db)
         Try
             con.Open()
             Dim query As String = String.Format("INSERT INTO PELICULAS (DIRECTOR,NOMBRE, DURACION, PRODUCTORA, GENERO, SINOPSIS) VALUES (@director ,@nombre, @duracion,@productora,@genero,@sinopsis)")
             Dim cmd As New SQLiteCommand(query, con)
 
-            cmd.Parameters.Add("@director", DbType.Int64).Value = pelicula.director.id
-            cmd.Parameters.Add("@nombre", DbType.String).Value = pelicula.nombre
-            cmd.Parameters.Add("@duracion", DbType.Int64).Value = pelicula.duracion
-            cmd.Parameters.Add("@productora", DbType.String).Value = pelicula.productora
-            cmd.Parameters.Add("@genero", DbType.String).Value = pelicula.genero
-            cmd.Parameters.Add("@sinopsis", DbType.String).Value = pelicula.sinopsis
-
-
+            cmd.Parameters.Add("@director", DbType.Int64).Value = director
+            cmd.Parameters.Add("@nombre", DbType.String).Value = nombre
+            cmd.Parameters.Add("@duracion", DbType.Int64).Value = duracion
+            cmd.Parameters.Add("@productora", DbType.String).Value = productora
+            cmd.Parameters.Add("@genero", DbType.String).Value = genero
+            cmd.Parameters.Add("@sinopsis", DbType.String).Value = sinopsis
             cmd.ExecuteNonQuery()
 
         Catch ex As Exception

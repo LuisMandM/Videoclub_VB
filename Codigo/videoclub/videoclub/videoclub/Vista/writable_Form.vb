@@ -67,15 +67,23 @@ Public Class writable_Form
 
     Private Sub btton_Save_Click(sender As Object, e As EventArgs) Handles btton_Save.Click
         Try
+            Dim selected = creationCtrl.selected_gender
+            Dim selected_dir = Integer.Parse(creationCtrl.director)
 
             If role = Action.action.CREATING Then
-                MsgBox("Se esta Creando.")
+                ''Console.WriteLine(selected)
+                writer.AddPelicula(creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
+                MsgBox("Pelicula añadida", Title:="Registro Exitoso")
+                Main_Form.InsertarFormulario(Init_Form.GetInstance())
+
             Else role = Action.action.EDITING
-                MsgBox("Se esta editando.")
+                'Console.WriteLine(selected)
+                writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
+                MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
+                Main_Form.InsertarFormulario(Init_Form.GetInstance())
             End If
 
-            'Dim selected = creationCtrl.selected_gender
-            'Dim selected_dir = Integer.Parse(creationCtrl.director)
+
             ''Console.WriteLine(selected)
             'writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
             'MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
