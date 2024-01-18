@@ -19,6 +19,7 @@
 
     Private Sub smi_Pelicula_Click(sender As Object, e As EventArgs) Handles smi_Pelicula.Click
         InsertarFormulario(writable_Form.GetInstance)
+        'writable_Form.role = writable_Form.Action.action.CREATING
     End Sub
 
     Private Sub smi_Visualizar_Click(sender As Object, e As EventArgs) Handles smi_Visualizar.Click
@@ -45,5 +46,6 @@
 
     Public Sub ShowEditView(movie As Integer)
         InsertarFormulario(writable_Form.GetInstance(movie))
+        'writable_Form.role = writable_Form.Action.action.CREATING
     End Sub
 End Class
