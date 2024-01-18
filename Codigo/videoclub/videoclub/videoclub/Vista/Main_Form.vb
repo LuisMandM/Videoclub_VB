@@ -31,12 +31,14 @@
     Private Sub smi_Actor_Click(sender As Object, e As EventArgs) Handles smi_Actor.Click
         Dim formulario = Add_Persona_Form
         formulario.Text = "Añadir Actor"
+        formulario.tipo_Persona = Add_Persona_Form.Role.role.ACTOR
         formulario.Show()
     End Sub
 
     Private Sub smi_Director_Click(sender As Object, e As EventArgs) Handles smi_Director.Click
         Dim formulario = Add_Persona_Form
         formulario.Text = "Añadir Director"
+        formulario.tipo_Persona = Add_Persona_Form.Role.role.DIRECTOR
         formulario.Show()
     End Sub
 

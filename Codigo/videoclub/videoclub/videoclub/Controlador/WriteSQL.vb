@@ -2,13 +2,13 @@
 
 Public Class WriteSQL
 
-    Sub AddDirector(director As Persona)
+    Sub AddDirector(director As String)
         Dim con As SQLiteConnection = New SQLiteConnection(My.Settings.conexion_db)
         Try
             con.Open()
             Dim query As String = String.Format("INSERT INTO DIRECTORES (NOMBRE) VALUES (@nombre)")
             Dim cmd As New SQLiteCommand(query, con)
-            cmd.Parameters.Add("@nombre", DbType.String).Value = director.nombre
+            cmd.Parameters.Add("@nombre", DbType.String).Value = director
             cmd.ExecuteNonQuery()
 
         Catch ex As Exception
@@ -17,13 +17,13 @@ Public Class WriteSQL
         End Try
     End Sub
 
-    Sub AddActor(actor As Persona)
+    Sub AddActor(actor As String)
         Dim con As SQLiteConnection = New SQLiteConnection(My.Settings.conexion_db)
         Try
             con.Open()
             Dim query As String = String.Format("INSERT INTO ACTORES (NOMBRE) VALUES (@nombre)")
             Dim cmd As New SQLiteCommand(query, con)
-            cmd.Parameters.Add("@nombre", DbType.String).Value = actor.nombre
+            cmd.Parameters.Add("@nombre", DbType.String).Value = actor
             cmd.ExecuteNonQuery()
 
         Catch ex As Exception
