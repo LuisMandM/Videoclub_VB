@@ -21,6 +21,9 @@ Public Class info_Form
         wcontent.sinopsis = v_movie.sinopsis
         wcontent.genero = v_movie.genero.ToString
         wcontent.director = v_movie.director.nombre
+        If v_movie.poster IsNot Nothing Then
+            wcontent.poster = v_movie.poster
+        End If
         'SetEnable()
         dataGrid_Roles.DataSource = reader.ReadingRolesDataSet(v_movie.id)
 

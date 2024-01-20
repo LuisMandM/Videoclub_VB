@@ -39,7 +39,8 @@ Public Class Views_Form
             Dim v_movie As New DetailView With {
                 .titulo = movie.nombre,
                 .contenido = movie.sinopsis,
-                .id_Movie = movie.id
+                .id_Movie = movie.id,
+                .poster = movie.poster
             }
             tlpMovies.RowStyles.Add(New RowStyle(AutoSize))
             tlpMovies.Controls.Add(v_movie, 0, i)

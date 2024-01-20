@@ -62,6 +62,7 @@ Public Class writable_Form
         creationCtrl.ValueMember1 = "id"
         creationCtrl.genero = Nothing
         creationCtrl.genero = controller.enumString
+        creationCtrl.poster = Nothing
 
     End Sub
 
