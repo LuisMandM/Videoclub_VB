@@ -9,6 +9,7 @@ Public Class info_Form
             formulario = New info_Form
         End If
         formulario.Cargar_Datos(id)
+
         Return formulario
     End Function
 
@@ -23,14 +24,11 @@ Public Class info_Form
         wcontent.director = v_movie.director.nombre
         If v_movie.poster IsNot Nothing Then
             wcontent.poster = v_movie.poster
+        Else
+            wcontent.poster = Nothing
         End If
-        'SetEnable()
+
         dataGrid_Roles.DataSource = reader.ReadingRolesDataSet(v_movie.id)
-
-    End Sub
-
-
-    Private Sub SetEnable()
 
     End Sub
 

@@ -35,10 +35,10 @@ Partial Class WritableContent
         Me.tbox_Productora = New System.Windows.Forms.TextBox()
         Me.tbox_Sinopsis = New System.Windows.Forms.TextBox()
         Me.lbl_Name = New System.Windows.Forms.Label()
-        Me.picBox_Poster = New System.Windows.Forms.PictureBox()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.tbox_Director = New System.Windows.Forms.TextBox()
         Me.tbox_Genero = New System.Windows.Forms.TextBox()
+        Me.picBox_Poster = New System.Windows.Forms.PictureBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.tlp_Principal.SuspendLayout()
         Me.tlp_WritableContent.SuspendLayout()
         CType(Me.picBox_Poster, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -182,6 +182,7 @@ Partial Class WritableContent
         Me.tbox_Registro.ForeColor = System.Drawing.SystemColors.Window
         Me.tbox_Registro.Location = New System.Drawing.Point(157, 65)
         Me.tbox_Registro.Name = "tbox_Registro"
+        Me.tbox_Registro.ReadOnly = True
         Me.tbox_Registro.Size = New System.Drawing.Size(354, 24)
         Me.tbox_Registro.TabIndex = 7
         '
@@ -194,6 +195,7 @@ Partial Class WritableContent
         Me.tbox_Duracion.ForeColor = System.Drawing.SystemColors.Window
         Me.tbox_Duracion.Location = New System.Drawing.Point(157, 125)
         Me.tbox_Duracion.Name = "tbox_Duracion"
+        Me.tbox_Duracion.ReadOnly = True
         Me.tbox_Duracion.Size = New System.Drawing.Size(354, 24)
         Me.tbox_Duracion.TabIndex = 9
         '
@@ -206,6 +208,7 @@ Partial Class WritableContent
         Me.tbox_Productora.ForeColor = System.Drawing.SystemColors.Window
         Me.tbox_Productora.Location = New System.Drawing.Point(157, 155)
         Me.tbox_Productora.Name = "tbox_Productora"
+        Me.tbox_Productora.ReadOnly = True
         Me.tbox_Productora.Size = New System.Drawing.Size(354, 24)
         Me.tbox_Productora.TabIndex = 10
         '
@@ -219,6 +222,7 @@ Partial Class WritableContent
         Me.tbox_Sinopsis.Location = New System.Drawing.Point(157, 215)
         Me.tbox_Sinopsis.Multiline = True
         Me.tbox_Sinopsis.Name = "tbox_Sinopsis"
+        Me.tbox_Sinopsis.ReadOnly = True
         Me.tbox_Sinopsis.Size = New System.Drawing.Size(354, 246)
         Me.tbox_Sinopsis.TabIndex = 12
         '
@@ -234,6 +238,32 @@ Partial Class WritableContent
         Me.lbl_Name.TabIndex = 15
         Me.lbl_Name.Text = "Movie"
         Me.lbl_Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'tbox_Director
+        '
+        Me.tbox_Director.BackColor = System.Drawing.Color.DimGray
+        Me.tbox_Director.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbox_Director.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbox_Director.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbox_Director.ForeColor = System.Drawing.SystemColors.Window
+        Me.tbox_Director.Location = New System.Drawing.Point(157, 95)
+        Me.tbox_Director.Name = "tbox_Director"
+        Me.tbox_Director.ReadOnly = True
+        Me.tbox_Director.Size = New System.Drawing.Size(354, 24)
+        Me.tbox_Director.TabIndex = 16
+        '
+        'tbox_Genero
+        '
+        Me.tbox_Genero.BackColor = System.Drawing.Color.DimGray
+        Me.tbox_Genero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbox_Genero.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbox_Genero.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbox_Genero.ForeColor = System.Drawing.SystemColors.Window
+        Me.tbox_Genero.Location = New System.Drawing.Point(157, 185)
+        Me.tbox_Genero.Name = "tbox_Genero"
+        Me.tbox_Genero.ReadOnly = True
+        Me.tbox_Genero.Size = New System.Drawing.Size(354, 24)
+        Me.tbox_Genero.TabIndex = 17
         '
         'picBox_Poster
         '
@@ -251,29 +281,6 @@ Partial Class WritableContent
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'tbox_Director
-        '
-        Me.tbox_Director.BackColor = System.Drawing.Color.DimGray
-        Me.tbox_Director.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbox_Director.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tbox_Director.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbox_Director.ForeColor = System.Drawing.SystemColors.Window
-        Me.tbox_Director.Location = New System.Drawing.Point(157, 95)
-        Me.tbox_Director.Name = "tbox_Director"
-        Me.tbox_Director.Size = New System.Drawing.Size(354, 24)
-        Me.tbox_Director.TabIndex = 16
-        '
-        'tbox_Genero
-        '
-        Me.tbox_Genero.BackColor = System.Drawing.Color.DimGray
-        Me.tbox_Genero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbox_Genero.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbox_Genero.ForeColor = System.Drawing.SystemColors.Window
-        Me.tbox_Genero.Location = New System.Drawing.Point(157, 185)
-        Me.tbox_Genero.Name = "tbox_Genero"
-        Me.tbox_Genero.Size = New System.Drawing.Size(354, 24)
-        Me.tbox_Genero.TabIndex = 17
         '
         'WritableContent
         '
