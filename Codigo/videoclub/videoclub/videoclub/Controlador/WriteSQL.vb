@@ -11,6 +11,7 @@ Public Class WriteSQL
             Dim cmd As New SQLiteCommand(query, con)
             cmd.Parameters.Add("@nombre", DbType.String).Value = director
             cmd.ExecuteNonQuery()
+            con.Close()
 
         Catch ex As Exception
             Throw New Exception(ex.Message)
@@ -26,6 +27,7 @@ Public Class WriteSQL
             Dim cmd As New SQLiteCommand(query, con)
             cmd.Parameters.Add("@nombre", DbType.String).Value = actor
             cmd.ExecuteNonQuery()
+            con.Close()
 
         Catch ex As Exception
             Throw New Exception(ex.Message)
@@ -34,17 +36,17 @@ Public Class WriteSQL
     End Sub
 
 
-    Sub AddPersonaje(personaje As Personaje)
+    Sub AddPersonaje(actor As Integer, personaje As String, pelicula As Integer)
         Dim con As SQLiteConnection = New SQLiteConnection(My.Settings.conexion_db)
         Try
             con.Open()
             Dim query As String = String.Format("INSERT INTO PERSONAJES (ACTOR, NOMBRE, PELICULA) VALUES (@actor ,@nombre, @pelicula)")
             Dim cmd As New SQLiteCommand(query, con)
-            cmd.Parameters.Add("@actor", DbType.Int64).Value = personaje.actor.id
-            cmd.Parameters.Add("@nombre", DbType.String).Value = personaje.nombre
-            cmd.Parameters.Add("@pelicula", DbType.Int64).Value = personaje.pelicula.id
+            cmd.Parameters.Add("@actor", DbType.Int64).Value = actor
+            cmd.Parameters.Add("@nombre", DbType.String).Value = personaje
+            cmd.Parameters.Add("@pelicula", DbType.Int64).Value = pelicula
             cmd.ExecuteNonQuery()
-
+            con.Close()
         Catch ex As Exception
             Throw New Exception(ex.Message)
 
@@ -77,6 +79,7 @@ Public Class WriteSQL
                 Throw New Exception("Imagen sin valor")
             End If
             cmd.ExecuteNonQuery()
+            con.Close()
 
         Catch ex As Exception
             Throw New Exception(ex.Message)
@@ -98,6 +101,7 @@ Public Class WriteSQL
             cmd.Parameters.Add("@genero", DbType.String).Value = genero
             cmd.Parameters.Add("@sinopsis", DbType.String).Value = sinopsis
             cmd.ExecuteNonQuery()
+            con.Close()
 
         Catch ex As Exception
             Throw New Exception(ex.Message)
@@ -121,6 +125,7 @@ Public Class WriteSQL
             cmd.Parameters.Add("@sinopsis", DbType.String).Value = sinopsis
             cmd.Parameters.Add("@id", DbType.String).Value = id
             cmd.ExecuteNonQuery()
+            con.Close()
 
         Catch ex As Exception
             Throw New Exception(ex.Message)
