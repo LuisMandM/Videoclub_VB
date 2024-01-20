@@ -63,6 +63,14 @@ Public Class Views_Form
 
     Sub show_Edit(sender As Object, e As ButtonClickEventArgs)
         'MsgBox(String.Format("El id de esta movie es {0}", e.Id_Movie))
-        Main_Form.ShowEditView(e.Id_Movie)
+        Dim sql_Controller = New DeleteSQL
+        Try
+            sql_Controller.Delete_Movie(e.Id_Movie)
+            MsgBox("Eliminacion Completa", Title:="Eliminación de Pelicula")
+            Main_Form.InsertarFormulario(Views_Form.GetInstance)
+            Views_Form.GetInstance().CargarDatos()
+        Catch ex As Exception
+            MsgBox(ex.Message, Title:="Eliminación de Pelicula")
+        End Try
     End Sub
 End Class
