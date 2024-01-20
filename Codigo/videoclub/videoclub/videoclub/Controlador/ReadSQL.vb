@@ -191,10 +191,6 @@ Public Class ReadSQL
             Dim ds As New DataSet()
             ds.Tables.Add("tabla")
             da.Fill(ds.Tables("tabla"))
-
-            'ComboBox1.DataSource = ds.Tables("tabla")
-            'ComboBox1.DisplayMember = "titulo"
-            'ComboBox1.ValueMember = "id"
             con.Close()
             Return ds.Tables("Tabla")
         Catch ex As Exception
@@ -202,7 +198,22 @@ Public Class ReadSQL
         End Try
     End Function
 
-    Private Function BinaryData_To_Image(data As Image)
 
+    Function ReadingActorsDataSource()
+        Dim con As New SQLiteConnection(My.Settings.conexion_db)
+        Dim consulta As String = "SELECT ID, NOMBRE FROM ACTORES"
+        Try
+            con.Open()
+            Dim cmd As New SQLiteCommand(consulta, con)
+            Dim da As New SQLiteDataAdapter(cmd)
+            Dim ds As New DataSet()
+            ds.Tables.Add("tabla")
+            da.Fill(ds.Tables("tabla"))
+            con.Close()
+            Return ds.Tables("Tabla")
+        Catch ex As Exception
+            MsgBox("Problemas con la BBDD")
+        End Try
     End Function
+
 End Class
