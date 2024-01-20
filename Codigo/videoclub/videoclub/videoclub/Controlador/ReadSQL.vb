@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SQLite
 Imports System.IO
 Imports System.Linq.Expressions
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class ReadSQL
 
@@ -102,7 +103,7 @@ Public Class ReadSQL
             Dim lector As SQLiteDataReader = cmd.ExecuteReader()
             While lector.Read()
                 resultado = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)),
-                                              duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=Controller.genero_Enum.genero.DRAMA, sinopsis:=lector.GetString(5))
+                                              duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=lector.GetString(4), sinopsis:=lector.GetString(5))
 
             End While
             lector.Close()
@@ -128,11 +129,11 @@ Public Class ReadSQL
                     'Dim current = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)), duracion:=lector.GetInt64(2)
                     '   , productora:=lector.GetString(3), genero:=Controller.genero_Enum.genero.DRAMA, sinopsis:=lector.GetString(5))
                     Dim current = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)),
-                                               duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=Controller.genero_Enum.genero.DRAMA, sinopsis:=lector.GetString(5))
+                                               duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=lector.GetString(4), sinopsis:=lector.GetString(5))
                     resultado.Add(current)
                 Else
                     Dim current = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)),
-                                              duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=Controller.genero_Enum.genero.DRAMA, sinopsis:=lector.GetString(5))
+                                              duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=lector.GetString(4), sinopsis:=lector.GetString(5))
                     resultado.Add(current)
                 End If
 
@@ -165,4 +166,25 @@ Public Class ReadSQL
         End Try
     End Function
 
+
+    Function ReadingDirectorsDataSource()
+        Dim con As New SQLiteConnection(My.Settings.conexion_db)
+        Dim consulta As String = "SELECT ID, NOMBRE FROM DIRECTORES"
+        Try
+            con.Open()
+            Dim cmd As New SQLiteCommand(consulta, con)
+            Dim da As New SQLiteDataAdapter(cmd)
+            Dim ds As New DataSet()
+            ds.Tables.Add("tabla")
+            da.Fill(ds.Tables("tabla"))
+
+            'ComboBox1.DataSource = ds.Tables("tabla")
+            'ComboBox1.DisplayMember = "titulo"
+            'ComboBox1.ValueMember = "id"
+            con.Close()
+            Return ds.Tables("Tabla")
+        Catch ex As Exception
+            MsgBox("Problemas con la BBDD")
+        End Try
+    End Function
 End Class

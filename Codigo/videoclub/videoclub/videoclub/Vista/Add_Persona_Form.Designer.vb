@@ -26,7 +26,7 @@ Partial Class Add_Persona_Form
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.lbl_Nombre = New System.Windows.Forms.Label()
         Me.tbox_Name = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btton_Save = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -37,7 +37,7 @@ Partial Class Add_Persona_Form
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.Controls.Add(Me.lbl_Nombre, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.tbox_Name, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button1, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.btton_Save, 0, 2)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -74,19 +74,19 @@ Partial Class Add_Persona_Form
         Me.tbox_Name.Size = New System.Drawing.Size(384, 16)
         Me.tbox_Name.TabIndex = 2
         '
-        'Button1
+        'btton_Save
         '
-        Me.Button1.BackColor = System.Drawing.Color.Yellow
-        Me.TableLayoutPanel1.SetColumnSpan(Me.Button1, 2)
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button1.Font = New System.Drawing.Font("Courier New", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(100, 56)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(100, 3, 100, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(252, 38)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Guardar"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btton_Save.BackColor = System.Drawing.Color.Yellow
+        Me.TableLayoutPanel1.SetColumnSpan(Me.btton_Save, 2)
+        Me.btton_Save.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btton_Save.Font = New System.Drawing.Font("Courier New", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btton_Save.Location = New System.Drawing.Point(100, 56)
+        Me.btton_Save.Margin = New System.Windows.Forms.Padding(100, 3, 100, 3)
+        Me.btton_Save.Name = "btton_Save"
+        Me.btton_Save.Size = New System.Drawing.Size(252, 38)
+        Me.btton_Save.TabIndex = 3
+        Me.btton_Save.Text = "Guardar"
+        Me.btton_Save.UseVisualStyleBackColor = False
         '
         'Add_Persona_Form
         '
@@ -107,5 +107,5 @@ Partial Class Add_Persona_Form
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents lbl_Nombre As Label
     Friend WithEvents tbox_Name As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btton_Save As Button
 End Class

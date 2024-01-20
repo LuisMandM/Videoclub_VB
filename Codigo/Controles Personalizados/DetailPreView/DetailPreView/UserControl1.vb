@@ -25,6 +25,8 @@ Public Class DetailView
     End Property
 
     Public Event MyclickView As EventHandler(Of ButtonClickEventArgs)
+    Public Event MyclickEdit As EventHandler(Of ButtonClickEventArgs)
+
     Public Event clickEdit()
     Public Event clickView()
     Public Event clickDelete()
@@ -54,7 +56,8 @@ Public Class DetailView
     End Sub
 
     Private Sub btton_Edit_Click(sender As Object, e As EventArgs) Handles btton_Edit.Click
-        RaiseEvent clickEdit()
+        Dim movie As Integer = id_Movie
+        RaiseEvent MyclickEdit(Me, New ButtonClickEventArgs(movie))
     End Sub
 
     Private Sub btton_Delete_Click(sender As Object, e As EventArgs) Handles btton_Delete.Click

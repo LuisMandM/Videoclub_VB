@@ -46,7 +46,7 @@ Public Class Views_Form
 
 
             AddHandler v_movie.MyclickView, AddressOf show_Info
-            AddHandler v_movie.clickEdit, AddressOf Show
+            AddHandler v_movie.MyclickEdit, AddressOf show_Edit
             AddHandler v_movie.clickDelete, AddressOf Show
 
             i = i + 1
@@ -56,8 +56,12 @@ Public Class Views_Form
     End Sub
 
     Sub show_Info(sender As Object, e As ButtonClickEventArgs)
-        MsgBox(String.Format("El id de esta movie es {0}", e.Id_Movie))
+        'MsgBox(String.Format("El id de esta movie es {0}", e.Id_Movie))
         Main_Form.ShowInfoView(e.Id_Movie)
     End Sub
 
+    Sub show_Edit(sender As Object, e As ButtonClickEventArgs)
+        'MsgBox(String.Format("El id de esta movie es {0}", e.Id_Movie))
+        Main_Form.ShowEditView(e.Id_Movie)
+    End Sub
 End Class

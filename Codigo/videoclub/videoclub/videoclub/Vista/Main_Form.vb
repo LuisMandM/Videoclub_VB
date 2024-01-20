@@ -19,6 +19,7 @@
 
     Private Sub smi_Pelicula_Click(sender As Object, e As EventArgs) Handles smi_Pelicula.Click
         InsertarFormulario(writable_Form.GetInstance)
+        'writable_Form.role = writable_Form.Action.action.CREATING
     End Sub
 
     Private Sub smi_Visualizar_Click(sender As Object, e As EventArgs) Handles smi_Visualizar.Click
@@ -30,16 +31,23 @@
     Private Sub smi_Actor_Click(sender As Object, e As EventArgs) Handles smi_Actor.Click
         Dim formulario = Add_Persona_Form
         formulario.Text = "Añadir Actor"
+        formulario.tipo_Persona = Add_Persona_Form.Role.role.ACTOR
         formulario.Show()
     End Sub
 
     Private Sub smi_Director_Click(sender As Object, e As EventArgs) Handles smi_Director.Click
         Dim formulario = Add_Persona_Form
         formulario.Text = "Añadir Director"
+        formulario.tipo_Persona = Add_Persona_Form.Role.role.DIRECTOR
         formulario.Show()
     End Sub
 
     Public Sub ShowInfoView(movie As Integer)
         InsertarFormulario(info_Form.GetInstance(movie))
+    End Sub
+
+    Public Sub ShowEditView(movie As Integer)
+        InsertarFormulario(writable_Form.GetInstance(movie))
+        'writable_Form.role = writable_Form.Action.action.CREATING
     End Sub
 End Class

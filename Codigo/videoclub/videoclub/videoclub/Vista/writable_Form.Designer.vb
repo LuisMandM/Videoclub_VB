@@ -122,8 +122,13 @@ Partial Class writable_Form
         'creationCtrl
         '
         Me.creationCtrl.BackColor = System.Drawing.SystemColors.ControlText
+        Me.creationCtrl.DataSource = Nothing
+        Me.creationCtrl.director = Nothing
+        Me.creationCtrl.DisplayMember1 = ""
         Me.creationCtrl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.creationCtrl.duracion = ""
+        Me.creationCtrl.genero = Nothing
+        Me.creationCtrl.id = 0
         Me.creationCtrl.Location = New System.Drawing.Point(3, 3)
         Me.creationCtrl.MinimumSize = New System.Drawing.Size(317, 440)
         Me.creationCtrl.Name = "creationCtrl"
@@ -133,6 +138,7 @@ Partial Class writable_Form
         Me.creationCtrl.sinopsis = ""
         Me.creationCtrl.Size = New System.Drawing.Size(880, 440)
         Me.creationCtrl.TabIndex = 2
+        Me.creationCtrl.ValueMember1 = ""
         '
         'TableLayoutPanel1
         '
