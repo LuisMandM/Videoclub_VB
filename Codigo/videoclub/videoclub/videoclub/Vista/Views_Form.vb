@@ -48,7 +48,7 @@ Public Class Views_Form
 
             AddHandler v_movie.MyclickView, AddressOf show_Info
             AddHandler v_movie.MyclickEdit, AddressOf show_Edit
-            AddHandler v_movie.clickDelete, AddressOf Show
+            AddHandler v_movie.MyclickDelete, AddressOf execute_Delete
 
             i = i + 1
         Next
@@ -62,6 +62,10 @@ Public Class Views_Form
     End Sub
 
     Sub show_Edit(sender As Object, e As ButtonClickEventArgs)
+        'MsgBox(String.Format("El id de esta movie es {0}", e.Id_Movie))
+        Main_Form.ShowEditView(e.Id_Movie)
+    End Sub
+    Sub execute_Delete(sender As Object, e As ButtonClickEventArgs)
         'MsgBox(String.Format("El id de esta movie es {0}", e.Id_Movie))
         Dim sql_Controller = New DeleteSQL
         Try
