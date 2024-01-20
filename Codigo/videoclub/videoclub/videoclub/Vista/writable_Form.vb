@@ -1,4 +1,6 @@
 ﻿Imports System.Diagnostics.Eventing
+Imports System.IO
+Imports System.Net.Mime.MediaTypeNames
 Imports System.Runtime.Remoting.Contexts
 Imports videoclub.Controller
 
@@ -9,6 +11,7 @@ Public Class writable_Form
     Private writer As New WriteSQL
     Private controller As New Controller
     Private _role As Action.action
+    Private current_Poster As System.Drawing.Image
 
     Property role As Action.action
         Get
@@ -48,6 +51,7 @@ Public Class writable_Form
         creationCtrl.sinopsis = v_movie.sinopsis
         If v_movie.poster IsNot Nothing Then
             creationCtrl.poster = v_movie.poster
+            current_Poster = v_movie.poster
         End If
 
     End Sub
@@ -87,11 +91,18 @@ Public Class writable_Form
 
                 'writer.AddPelicula(creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
                 MsgBox("Pelicula añadida", Title:="Registro Exitoso")
-                Main_Form.InsertarFormulario(Init_Form.GetInstance())
+                'Main_Form.InsertarFormulario(Init_Form.GetInstance())
 
             Else role = Action.action.EDITING
                 'Console.WriteLine(selected)
                 If creationCtrl.poster IsNot Nothing Then
+                    'If ComparingPosters(Me.current_Poster, creationCtrl.poster) Then
+                    '    writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
+                    'Else
+                    '    writer.UpdatePelicula_All(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir, creationCtrl.poster)
+
+                    'End If
+
                     writer.UpdatePelicula_All(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir, creationCtrl.poster)
                     'MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
 
@@ -103,9 +114,11 @@ Public Class writable_Form
 
                 'writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
                 MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
-                Main_Form.InsertarFormulario(Init_Form.GetInstance())
+                'Main_Form.InsertarFormulario(Init_Form.GetInstance())
             End If
 
+            Main_Form.InsertarFormulario(Views_Form.GetInstance)
+            Views_Form.GetInstance().CargarDatos()
 
             ''Console.WriteLine(selected)
             'writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
@@ -123,5 +136,15 @@ Public Class writable_Form
             CREATING
         End Enum
     End Structure
+
+    Private Function ComparingPosters(image_current As System.Drawing.Image, changing_Image As System.Drawing.Image)
+        Dim stream1 As New MemoryStream()
+        Dim stream2 As New MemoryStream()
+        image_current.Save(stream1, Imaging.ImageFormat.Jpeg)
+        changing_Image.Save(stream2, Imaging.ImageFormat.Jpeg)
+        Dim imageData As Byte() = stream1.ToArray
+
+        Return stream1.ToArray().SequenceEqual(stream2.ToArray())
+    End Function
 
 End Class

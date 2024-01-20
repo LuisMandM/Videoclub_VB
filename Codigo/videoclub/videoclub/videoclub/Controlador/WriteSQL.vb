@@ -68,9 +68,11 @@ Public Class WriteSQL
             If poster IsNot Nothing Then
                 Using stream As New MemoryStream()
                     poster.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg)
+
                     Dim imageData As Byte() = stream.ToArray
                     cmd.Parameters.Add("@poster", DbType.Binary).Value = imageData
                 End Using
+
             Else
                 Throw New Exception("Imagen sin valor")
             End If
@@ -146,6 +148,7 @@ Public Class WriteSQL
                     Dim imageData As Byte() = stream.ToArray
                     cmd.Parameters.Add("@poster", DbType.Binary).Value = imageData
                 End Using
+                poster.Dispose()
             Else
                 Throw New Exception("Imagen sin valor")
             End If
@@ -154,7 +157,8 @@ Public Class WriteSQL
 
         Catch ex As Exception
             Throw New Exception(ex.Message)
-
+        Finally
+            con.Close()
         End Try
 
     End Sub
