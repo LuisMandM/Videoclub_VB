@@ -78,6 +78,13 @@ Public Class writable_Form
 
             If role = Action.action.CREATING Then
                 ''Console.WriteLine(selected)
+                If creationCtrl.poster IsNot Nothing Then
+                    writer.AddPelicula_All(creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir, creationCtrl.poster)
+                Else
+                    writer.AddPelicula(creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
+
+                End If
+
                 writer.AddPelicula(creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
                 MsgBox("Pelicula añadida", Title:="Registro Exitoso")
                 Main_Form.InsertarFormulario(Init_Form.GetInstance())
