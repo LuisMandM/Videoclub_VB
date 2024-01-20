@@ -4,7 +4,16 @@ Public Class DetailView
     Private _titulo As String
     Private _contenido As String
     Private _id_Movie As String
+    Private _poster As Image
 
+    Property poster As Image
+        Get
+            Return picBox.Image
+        End Get
+        Set
+            picBox.Image = Value
+        End Set
+    End Property
 
     Property id_Movie As String
         Get
