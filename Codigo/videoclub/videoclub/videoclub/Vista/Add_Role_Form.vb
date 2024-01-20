@@ -24,8 +24,18 @@
         cbox_Actor.DataSource = reader.ReadingActorsDataSource
         cbox_Actor.DisplayMember = "nombre"
         cbox_Actor.ValueMember = "id"
-        'creationCtrl.DataSource = reader.ReadingDirectorsDataSource
-        'creationCtrl.DisplayMember1 = "nombre"
-        'creationCtrl.ValueMember1 = "id"
+
+    End Sub
+
+    Private Sub btton_Create_Click(sender As Object, e As EventArgs) Handles btton_Create.Click
+        Dim formulario = Add_Persona_Form
+        formulario.Text = "Añadir Actor"
+        formulario.tipo_Persona = Add_Persona_Form.Role.role.ACTOR
+        formulario.source = Me
+        formulario.Show()
+    End Sub
+
+    Private Sub btton_Save_Click(sender As Object, e As EventArgs) Handles btton_Save.Click
+
     End Sub
 End Class

@@ -108,9 +108,9 @@ Partial Class Add_Role_Form
         Me.lbl_Actor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_Actor.Font = New System.Drawing.Font("Courier New", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Actor.ForeColor = System.Drawing.Color.Yellow
-        Me.lbl_Actor.Location = New System.Drawing.Point(3, 22)
+        Me.lbl_Actor.Location = New System.Drawing.Point(3, 20)
         Me.lbl_Actor.Name = "lbl_Actor"
-        Me.lbl_Actor.Size = New System.Drawing.Size(79, 30)
+        Me.lbl_Actor.Size = New System.Drawing.Size(79, 31)
         Me.lbl_Actor.TabIndex = 0
         Me.lbl_Actor.Text = "Actor"
         '
@@ -120,9 +120,9 @@ Partial Class Add_Role_Form
         Me.lbl_Role.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_Role.Font = New System.Drawing.Font("Courier New", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Role.ForeColor = System.Drawing.Color.Yellow
-        Me.lbl_Role.Location = New System.Drawing.Point(3, 52)
+        Me.lbl_Role.Location = New System.Drawing.Point(3, 51)
         Me.lbl_Role.Name = "lbl_Role"
-        Me.lbl_Role.Size = New System.Drawing.Size(79, 28)
+        Me.lbl_Role.Size = New System.Drawing.Size(79, 30)
         Me.lbl_Role.TabIndex = 1
         Me.lbl_Role.Text = "Personaje"
         '
@@ -130,23 +130,23 @@ Partial Class Add_Role_Form
         '
         Me.cbox_Actor.BackColor = System.Drawing.Color.DimGray
         Me.cbox_Actor.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.cbox_Actor.Font = New System.Drawing.Font("Courier New", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbox_Actor.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbox_Actor.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.cbox_Actor.FormattingEnabled = True
-        Me.cbox_Actor.Location = New System.Drawing.Point(88, 25)
+        Me.cbox_Actor.Location = New System.Drawing.Point(88, 23)
         Me.cbox_Actor.Name = "cbox_Actor"
-        Me.cbox_Actor.Size = New System.Drawing.Size(488, 24)
+        Me.cbox_Actor.Size = New System.Drawing.Size(488, 25)
         Me.cbox_Actor.TabIndex = 2
         '
         'tbox_Role
         '
         Me.tbox_Role.BackColor = System.Drawing.Color.DimGray
         Me.tbox_Role.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tbox_Role.Font = New System.Drawing.Font("Courier New", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbox_Role.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbox_Role.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.tbox_Role.Location = New System.Drawing.Point(88, 55)
+        Me.tbox_Role.Location = New System.Drawing.Point(88, 54)
         Me.tbox_Role.Name = "tbox_Role"
-        Me.tbox_Role.Size = New System.Drawing.Size(488, 22)
+        Me.tbox_Role.Size = New System.Drawing.Size(488, 24)
         Me.tbox_Role.TabIndex = 3
         '
         'Add_Role_Form
@@ -156,7 +156,7 @@ Partial Class Add_Role_Form
         Me.ClientSize = New System.Drawing.Size(585, 271)
         Me.Controls.Add(Me.tlp_Principal)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximumSize = New System.Drawing.Size(603, 318)
+        Me.MaximumSize = New System.Drawing.Size(620, 318)
         Me.MinimumSize = New System.Drawing.Size(603, 318)
         Me.Name = "Add_Role_Form"
         Me.Text = "Añadir Personaje"

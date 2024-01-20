@@ -1,6 +1,16 @@
 ﻿Public Class Add_Persona_Form
     Private _tipo_Persona As Role.role
     Private writer As New WriteSQL
+    Private _source As Add_Role_Form
+
+    Property source As Add_Role_Form
+        Get
+            Return _source
+        End Get
+        Set
+            _source = Value
+        End Set
+    End Property
 
     Property tipo_Persona As Role.role
         Get
@@ -23,9 +33,12 @@
             If Me.tipo_Persona = Role.role.ACTOR Then
                 writer.AddActor(tbox_Name.Text)
                 MsgBox(String.Format("Actor: {0}, Guardado Exitosamente", tbox_Name.Text))
+                If Me.source IsNot Nothing Then
+                    source.Cargar_Datos()
+                End If
                 Me.Close()
 
-            Else Me.tipo_Persona = Role.role.DIRECTOR
+                Else Me.tipo_Persona = Role.role.DIRECTOR
                 writer.AddDirector(tbox_Name.Text)
                 MsgBox(String.Format("Director: {0}, Guardado Exitosamente", tbox_Name.Text))
                 Me.Close()
