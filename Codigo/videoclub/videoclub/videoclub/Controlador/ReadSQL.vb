@@ -152,18 +152,12 @@ Public Class ReadSQL
             While lector.Read()
                 If resultado Is Nothing Then
                     resultado = New List(Of Pelicula)
-                    'Dim current = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)), duracion:=lector.GetInt64(2)
-                    '   , productora:=lector.GetString(3), genero:=Controller.genero_Enum.genero.DRAMA, sinopsis:=lector.GetString(5))
-                    Dim current = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)),
-                                               duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=lector.GetString(4), sinopsis:=lector.GetString(5))
+                    Dim current = ReadPelicula_Single(lector.GetInt64(0))
                     resultado.Add(current)
                 Else
-                    Dim current = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)),
-                                              duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=lector.GetString(4), sinopsis:=lector.GetString(5))
+                    Dim current = ReadPelicula_Single(lector.GetInt64(0))
                     resultado.Add(current)
                 End If
-
-                'resultado = New Pelicula(id:=lector.GetInt64(0), nombre:=)
             End While
             lector.Close()
             conexion.Close()
