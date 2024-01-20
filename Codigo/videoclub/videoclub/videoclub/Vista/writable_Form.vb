@@ -37,6 +37,8 @@ Public Class writable_Form
         End If
         formulario.btton_add_Personaje.Enabled = False
         formulario.btton_add_Personaje.Visible = False
+        formulario.btton_add_Director.Enabled = False
+        formulario.btton_add_Director.Visible = False
         formulario.role = Action.action.CREATING
         formulario.discardChanges()
         Return formulario
@@ -130,6 +132,14 @@ Public Class writable_Form
     End Sub
 
 
+    Private Sub btton_add_Personaje_Click(sender As Object, e As EventArgs) Handles btton_add_Personaje.Click
+        Dim formulario = Add_Role_Form
+        formulario.Text = "Añadir Personaje"
+        formulario.current_Movie = creationCtrl.id
+        formulario.Cargar_Datos()
+        formulario.Show()
+    End Sub
+
     Public Structure Action
         Enum action
             EDITING
@@ -146,5 +156,6 @@ Public Class writable_Form
 
         Return stream1.ToArray().SequenceEqual(stream2.ToArray())
     End Function
+
 
 End Class
