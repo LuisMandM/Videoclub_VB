@@ -46,6 +46,10 @@ Public Class writable_Form
         creationCtrl.duracion = v_movie.duracion
         creationCtrl.productora = v_movie.productora
         creationCtrl.sinopsis = v_movie.sinopsis
+        If v_movie.poster IsNot Nothing Then
+            creationCtrl.poster = v_movie.poster
+        End If
+
     End Sub
 
     Private Sub discardChanges()
@@ -58,6 +62,7 @@ Public Class writable_Form
         creationCtrl.ValueMember1 = "id"
         creationCtrl.genero = Nothing
         creationCtrl.genero = controller.enumString
+
     End Sub
 
     Private Sub btton_Discard_Click(sender As Object, e As EventArgs) Handles btton_Discard.Click
@@ -78,7 +83,17 @@ Public Class writable_Form
 
             Else role = Action.action.EDITING
                 'Console.WriteLine(selected)
-                writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
+                If creationCtrl.poster IsNot Nothing Then
+                    writer.UpdatePelicula_All(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir, creationCtrl.poster)
+                    'MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
+
+                Else
+                    writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
+                    'MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
+
+                End If
+
+                'writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
                 MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
                 Main_Form.InsertarFormulario(Init_Form.GetInstance())
             End If

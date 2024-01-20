@@ -43,4 +43,9 @@
         Me.poster = poster
         Me.personajes = personajes
     End Sub
+
+    Public Sub New(id As Integer, nombre As String, director As Persona, duracion As Integer, productora As String, genero As String, sinopsis As String, poster As Image)
+        Me.New(id, nombre, director, duracion, productora, genero, sinopsis)
+        Me.poster = poster
+    End Sub
 End Class
