@@ -85,7 +85,7 @@ Public Class writable_Form
 
                 End If
 
-                writer.AddPelicula(creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
+                'writer.AddPelicula(creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
                 MsgBox("Pelicula añadida", Title:="Registro Exitoso")
                 Main_Form.InsertarFormulario(Init_Form.GetInstance())
 
