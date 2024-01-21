@@ -28,10 +28,10 @@ Partial Class writable_Form
         Me.tlp_Buttons = New System.Windows.Forms.TableLayoutPanel()
         Me.btton_add_Director = New System.Windows.Forms.Button()
         Me.btton_add_Personaje = New System.Windows.Forms.Button()
-        Me.creationCtrl = New CreationContentControl.CreationContentControl()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.btton_Discard = New System.Windows.Forms.Button()
         Me.btton_Save = New System.Windows.Forms.Button()
+        Me.creationCtrl = New CreationContentControl.CreationContentControl()
         Me.tlp_Principal.SuspendLayout()
         Me.tlp_DisplayContent.SuspendLayout()
         Me.tlp_Buttons.SuspendLayout()
@@ -119,27 +119,6 @@ Partial Class writable_Form
         Me.btton_add_Personaje.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btton_add_Personaje.UseVisualStyleBackColor = False
         '
-        'creationCtrl
-        '
-        Me.creationCtrl.BackColor = System.Drawing.SystemColors.ControlText
-        Me.creationCtrl.DataSource = Nothing
-        Me.creationCtrl.director = Nothing
-        Me.creationCtrl.DisplayMember1 = ""
-        Me.creationCtrl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.creationCtrl.duracion = ""
-        Me.creationCtrl.genero = Nothing
-        Me.creationCtrl.id = 0
-        Me.creationCtrl.Location = New System.Drawing.Point(3, 3)
-        Me.creationCtrl.MinimumSize = New System.Drawing.Size(317, 440)
-        Me.creationCtrl.Name = "creationCtrl"
-        Me.creationCtrl.nombre = ""
-        Me.creationCtrl.poster = Nothing
-        Me.creationCtrl.productora = ""
-        Me.creationCtrl.sinopsis = ""
-        Me.creationCtrl.Size = New System.Drawing.Size(880, 440)
-        Me.creationCtrl.TabIndex = 2
-        Me.creationCtrl.ValueMember1 = ""
-        '
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 2
@@ -180,6 +159,27 @@ Partial Class writable_Form
         Me.btton_Save.TabIndex = 0
         Me.btton_Save.Text = "Guardar"
         Me.btton_Save.UseVisualStyleBackColor = False
+        '
+        'creationCtrl
+        '
+        Me.creationCtrl.BackColor = System.Drawing.SystemColors.ControlText
+        Me.creationCtrl.DataSource = Nothing
+        Me.creationCtrl.director = Nothing
+        Me.creationCtrl.DisplayMember1 = ""
+        Me.creationCtrl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.creationCtrl.duracion = ""
+        Me.creationCtrl.genero = Nothing
+        Me.creationCtrl.id = 0
+        Me.creationCtrl.Location = New System.Drawing.Point(3, 3)
+        Me.creationCtrl.MinimumSize = New System.Drawing.Size(317, 440)
+        Me.creationCtrl.Name = "creationCtrl"
+        Me.creationCtrl.nombre = ""
+        Me.creationCtrl.poster = Nothing
+        Me.creationCtrl.productora = ""
+        Me.creationCtrl.sinopsis = ""
+        Me.creationCtrl.Size = New System.Drawing.Size(880, 440)
+        Me.creationCtrl.TabIndex = 2
+        Me.creationCtrl.ValueMember1 = ""
         '
         'writable_Form
         '

@@ -11,6 +11,7 @@
     Private _director As String
     Private _genero As String
 
+
     Property genero As String
         Get
             Return tbox_Genero.Text

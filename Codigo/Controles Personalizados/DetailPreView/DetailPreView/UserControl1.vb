@@ -4,7 +4,16 @@ Public Class DetailView
     Private _titulo As String
     Private _contenido As String
     Private _id_Movie As String
+    Private _poster As Image
 
+    Property poster As Image
+        Get
+            Return picBox.Image
+        End Get
+        Set
+            picBox.Image = Value
+        End Set
+    End Property
 
     Property id_Movie As String
         Get
@@ -26,6 +35,8 @@ Public Class DetailView
 
     Public Event MyclickView As EventHandler(Of ButtonClickEventArgs)
     Public Event MyclickEdit As EventHandler(Of ButtonClickEventArgs)
+    Public Event MyclickDelete As EventHandler(Of ButtonClickEventArgs)
+
 
     Public Event clickEdit()
     Public Event clickView()
@@ -61,7 +72,8 @@ Public Class DetailView
     End Sub
 
     Private Sub btton_Delete_Click(sender As Object, e As EventArgs) Handles btton_Delete.Click
-        RaiseEvent clickDelete()
+        Dim movie As Integer = id_Movie
+        RaiseEvent MyclickDelete(Me, New ButtonClickEventArgs(movie))
     End Sub
 End Class
 

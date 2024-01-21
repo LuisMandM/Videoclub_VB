@@ -101,9 +101,29 @@ Public Class ReadSQL
             Dim cmd As New SQLiteCommand(consulta, conexion)
             cmd.Parameters.Add("@id", DbType.Int64).Value = id
             Dim lector As SQLiteDataReader = cmd.ExecuteReader()
+            Dim image_Ar As Byte()
+            Dim poster_Image As Image
             While lector.Read()
-                resultado = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)),
+                If lector.IsDBNull(6) Then
+                    resultado = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)),
                                               duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=lector.GetString(4), sinopsis:=lector.GetString(5))
+                Else
+                    image_Ar = DirectCast(lector.GetValue(6), Byte())
+                    If image_Ar IsNot Nothing AndAlso image_Ar.Length > 0 Then
+                        Using stream As New MemoryStream(image_Ar)
+                            Dim poster As Image = Image.FromStream(stream)
+                            poster_Image = poster
+                        End Using
+                    End If
+                    If poster_Image IsNot Nothing Then
+                        resultado = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)),
+                                                  duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=lector.GetString(4), sinopsis:=lector.GetString(5), poster:=poster_Image)
+                    ElseIf poster_Image Is Nothing Then
+                        resultado = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)),
+                                                  duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=lector.GetString(4), sinopsis:=lector.GetString(5))
+
+                    End If
+                End If
 
             End While
             lector.Close()
@@ -126,18 +146,12 @@ Public Class ReadSQL
             While lector.Read()
                 If resultado Is Nothing Then
                     resultado = New List(Of Pelicula)
-                    'Dim current = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)), duracion:=lector.GetInt64(2)
-                    '   , productora:=lector.GetString(3), genero:=Controller.genero_Enum.genero.DRAMA, sinopsis:=lector.GetString(5))
-                    Dim current = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)),
-                                               duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=lector.GetString(4), sinopsis:=lector.GetString(5))
+                    Dim current = ReadPelicula_Single(lector.GetInt64(0))
                     resultado.Add(current)
                 Else
-                    Dim current = New Pelicula(id:=lector.GetInt64(0), nombre:=lector.GetString(7), director:=ReadDirector_Single(lector.GetInt64(1)),
-                                              duracion:=lector.GetInt64(2), productora:=lector.GetString(3), genero:=lector.GetString(4), sinopsis:=lector.GetString(5))
+                    Dim current = ReadPelicula_Single(lector.GetInt64(0))
                     resultado.Add(current)
                 End If
-
-                'resultado = New Pelicula(id:=lector.GetInt64(0), nombre:=)
             End While
             lector.Close()
             conexion.Close()
@@ -177,14 +191,29 @@ Public Class ReadSQL
             Dim ds As New DataSet()
             ds.Tables.Add("tabla")
             da.Fill(ds.Tables("tabla"))
-
-            'ComboBox1.DataSource = ds.Tables("tabla")
-            'ComboBox1.DisplayMember = "titulo"
-            'ComboBox1.ValueMember = "id"
             con.Close()
             Return ds.Tables("Tabla")
         Catch ex As Exception
             MsgBox("Problemas con la BBDD")
         End Try
     End Function
+
+
+    Function ReadingActorsDataSource()
+        Dim con As New SQLiteConnection(My.Settings.conexion_db)
+        Dim consulta As String = "SELECT ID, NOMBRE FROM ACTORES"
+        Try
+            con.Open()
+            Dim cmd As New SQLiteCommand(consulta, con)
+            Dim da As New SQLiteDataAdapter(cmd)
+            Dim ds As New DataSet()
+            ds.Tables.Add("tabla")
+            da.Fill(ds.Tables("tabla"))
+            con.Close()
+            Return ds.Tables("Tabla")
+        Catch ex As Exception
+            MsgBox("Problemas con la BBDD")
+        End Try
+    End Function
+
 End Class
