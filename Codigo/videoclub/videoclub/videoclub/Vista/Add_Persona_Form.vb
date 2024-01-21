@@ -30,19 +30,24 @@
 
     Private Sub btton_Save_Click(sender As Object, e As EventArgs) Handles btton_Save.Click
         Try
-            If Me.tipo_Persona = Role.role.ACTOR Then
-                writer.AddActor(tbox_Name.Text)
-                MsgBox(String.Format("Actor: {0}, Guardado Exitosamente", tbox_Name.Text))
-                If Me.source IsNot Nothing Then
-                    source.Cargar_Datos()
-                End If
-                Me.Close()
+            If tbox_Name IsNot "" Then
+                If Me.tipo_Persona = Role.role.ACTOR Then
+                    writer.AddActor(tbox_Name.Text)
+                    MsgBox(String.Format("Actor: {0}, Guardado Exitosamente", tbox_Name.Text))
+                    If Me.source IsNot Nothing Then
+                        source.Cargar_Datos()
+                    End If
+                    Me.Close()
 
                 Else Me.tipo_Persona = Role.role.DIRECTOR
-                writer.AddDirector(tbox_Name.Text)
-                MsgBox(String.Format("Director: {0}, Guardado Exitosamente", tbox_Name.Text))
-                Me.Close()
+                    writer.AddDirector(tbox_Name.Text)
+                    MsgBox(String.Format("Director: {0}, Guardado Exitosamente", tbox_Name.Text))
+                    Me.Close()
+                End If
+            Else
+                Throw New Exception("El campo de nombre no puede ser una cadena vacia")
             End If
+
 
         Catch ex As Exception
             MsgBox(ex.Message, Title:="Error Insertando")
