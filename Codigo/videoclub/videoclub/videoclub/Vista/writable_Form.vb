@@ -171,7 +171,7 @@ Public Class writable_Form
         If creationCtrl.nombre IsNot "" And creationCtrl.productora IsNot "" And creationCtrl.sinopsis IsNot "" And creationCtrl.duracion IsNot "" Then
             correct_Form = True
         Else
-            correct_Form = False
+            Throw New Exception("Algunos de los campos obligatorios pueden estar vacios, verifique la información e intente nuevamente")
         End If
 
         Dim nullable_director As Integer? = Integer.Parse(creationCtrl.director)
