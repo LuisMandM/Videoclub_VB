@@ -30,7 +30,7 @@
 
     Private Sub btton_Save_Click(sender As Object, e As EventArgs) Handles btton_Save.Click
         Try
-            If tbox_Name IsNot "" Then
+            If tbox_Name.Text IsNot "" Then
                 If Me.tipo_Persona = Role.role.ACTOR Then
                     writer.AddActor(tbox_Name.Text)
                     MsgBox(String.Format("Actor: {0}, Guardado Exitosamente", tbox_Name.Text))
