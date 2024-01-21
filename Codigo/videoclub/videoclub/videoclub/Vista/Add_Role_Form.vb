@@ -40,9 +40,14 @@
 
     Private Sub btton_Save_Click(sender As Object, e As EventArgs) Handles btton_Save.Click
         Try
-            writer.AddPersonaje(cbox_Actor.SelectedValue, tbox_Role.Text, current_Movie)
-            MsgBox(String.Format("Personaje: {0}, Guardado exitosamente", tbox_Role.Text), Title:="Guardado Personajes")
-            limpiar()
+            If tbox_Role.Text IsNot "" Then
+                writer.AddPersonaje(cbox_Actor.SelectedValue, tbox_Role.Text, current_Movie)
+                MsgBox(String.Format("Personaje: {0}, Guardado exitosamente", tbox_Role.Text), Title:="Guardado Personajes")
+                limpiar()
+            Else
+                Throw New Exception("El campo de nombre no puede ser una cadena vacia")
+            End If
+
         Catch ex As Exception
             MsgBox(ex.Message, Title:="Error Guardado personajes")
         End Try
