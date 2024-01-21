@@ -28,6 +28,10 @@ Public Class writable_Form
         End If
         formulario.discardChanges()
         formulario.Cargar_Datos(id)
+        formulario.btton_add_Personaje.Enabled = True
+        formulario.btton_add_Personaje.Visible = True
+        formulario.btton_add_Director.Enabled = False
+        formulario.btton_add_Director.Visible = False
         formulario.role = Action.action.EDITING
         Return formulario
     End Function
@@ -51,6 +55,7 @@ Public Class writable_Form
         creationCtrl.duracion = v_movie.duracion
         creationCtrl.productora = v_movie.productora
         creationCtrl.sinopsis = v_movie.sinopsis
+        creationCtrl.selected_gender = Nothing
         If v_movie.poster IsNot Nothing Then
             creationCtrl.poster = v_movie.poster
             current_Poster = v_movie.poster
@@ -82,46 +87,49 @@ Public Class writable_Form
             Dim selected = creationCtrl.selected_gender
             Dim selected_dir = Integer.Parse(creationCtrl.director)
 
-            If role = Action.action.CREATING Then
-                ''Console.WriteLine(selected)
-                If creationCtrl.poster IsNot Nothing Then
-                    writer.AddPelicula_All(creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir, creationCtrl.poster)
-                Else
-                    writer.AddPelicula(creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
+            If Not CheckingForm() Then
+                MsgBox("Algunos de los campos obligatorios pueden estar vacios, verifique la información e intente nuevamente", Title:="Error Creación Pelicula")
+            Else
+                'selected_dir = Integer.Parse(selected_dir)
+                If role = Action.action.CREATING Then
+                    ''Console.WriteLine(selected)
+                    If creationCtrl.poster IsNot Nothing Then
+                        writer.AddPelicula_All(creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir, creationCtrl.poster)
+                    Else
+                        writer.AddPelicula(creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
 
+                    End If
+
+                    'writer.AddPelicula(creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
+                    MsgBox("Pelicula añadida", Title:="Registro Exitoso")
+                    'Main_Form.InsertarFormulario(Init_Form.GetInstance())
+
+                Else role = Action.action.EDITING
+                    'Console.WriteLine(selected)
+                    If creationCtrl.poster IsNot Nothing Then
+                        'If ComparingPosters(Me.current_Poster, creationCtrl.poster) Then
+                        '    writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
+                        'Else
+                        '    writer.UpdatePelicula_All(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir, creationCtrl.poster)
+
+                        'End If
+
+                        writer.UpdatePelicula_All(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir, creationCtrl.poster)
+                        'MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
+
+                    Else
+                        writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
+                        'MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
+
+                    End If
+
+                    'writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
+                    MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
+                    'Main_Form.InsertarFormulario(Init_Form.GetInstance())
                 End If
-
-                'writer.AddPelicula(creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
-                MsgBox("Pelicula añadida", Title:="Registro Exitoso")
-                'Main_Form.InsertarFormulario(Init_Form.GetInstance())
-
-            Else role = Action.action.EDITING
-                'Console.WriteLine(selected)
-                If creationCtrl.poster IsNot Nothing Then
-                    'If ComparingPosters(Me.current_Poster, creationCtrl.poster) Then
-                    '    writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
-                    'Else
-                    '    writer.UpdatePelicula_All(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir, creationCtrl.poster)
-
-                    'End If
-
-                    writer.UpdatePelicula_All(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir, creationCtrl.poster)
-                    'MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
-
-                Else
-                    writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
-                    'MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
-
-                End If
-
-                'writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
-                MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
-                'Main_Form.InsertarFormulario(Init_Form.GetInstance())
+                Main_Form.InsertarFormulario(Views_Form.GetInstance)
+                Views_Form.GetInstance().CargarDatos()
             End If
-
-            Main_Form.InsertarFormulario(Views_Form.GetInstance)
-            Views_Form.GetInstance().CargarDatos()
-
             ''Console.WriteLine(selected)
             'writer.UpdatePelicula(creationCtrl.id, creationCtrl.nombre, creationCtrl.duracion, creationCtrl.productora, creationCtrl.sinopsis, selected.ToString, selected_dir)
             'MsgBox("Pelicula actualizada", Title:="Actualización Exitosa")
@@ -157,5 +165,29 @@ Public Class writable_Form
         Return stream1.ToArray().SequenceEqual(stream2.ToArray())
     End Function
 
+    Private Function CheckingForm() As Boolean
+        Dim correct_Form As Boolean
+        If creationCtrl.nombre IsNot "" And creationCtrl.productora IsNot "" And creationCtrl.sinopsis IsNot "" And creationCtrl.duracion IsNot "" Then
+            correct_Form = True
+        Else
+            correct_Form = False
+        End If
+
+        Dim nullable_director As Integer? = Integer.Parse(creationCtrl.director)
+        If nullable_director Is Nothing Then
+            Throw New Exception("Se debe elegir un Director para realizar el guardado.")
+        End If
+
+        If creationCtrl.selected_gender Is Nothing Then
+            Throw New Exception("Se debe elegir un Genero para realizar el guardado.")
+        End If
+        Try
+            Dim duracion As Integer? = Integer.Parse(creationCtrl.duracion)
+        Catch ex As Exception
+            Throw New Exception("Los datos del campo duración deben ser unicamente númericos.")
+        End Try
+
+        Return correct_Form
+    End Function
 
 End Class

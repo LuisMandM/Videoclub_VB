@@ -13,14 +13,14 @@
 
 
     Private _id As Integer
-    Private ReadOnly _selected_gender As String
+    Private _selected_gender As String
 
     Property selected_gender As String
         Get
             Return cbox_Genero.SelectedItem.ToString
         End Get
         Set
-
+            _selected_gender = Nothing
         End Set
     End Property
 
