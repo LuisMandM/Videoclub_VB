@@ -38,39 +38,39 @@ Partial Class Main_Form
         Me.mstrip_Main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smi_Visualizar, Me.smi_Crear})
         Me.mstrip_Main.Location = New System.Drawing.Point(0, 0)
         Me.mstrip_Main.Name = "mstrip_Main"
-        Me.mstrip_Main.Size = New System.Drawing.Size(1282, 30)
+        Me.mstrip_Main.Size = New System.Drawing.Size(1282, 28)
         Me.mstrip_Main.TabIndex = 0
         Me.mstrip_Main.Text = "MenuStrip1"
         '
         'smi_Visualizar
         '
         Me.smi_Visualizar.Name = "smi_Visualizar"
-        Me.smi_Visualizar.Size = New System.Drawing.Size(86, 26)
+        Me.smi_Visualizar.Size = New System.Drawing.Size(86, 24)
         Me.smi_Visualizar.Text = "Visualizar"
         '
         'smi_Crear
         '
         Me.smi_Crear.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smi_Pelicula, Me.smi_Actor, Me.smi_Director})
         Me.smi_Crear.Name = "smi_Crear"
-        Me.smi_Crear.Size = New System.Drawing.Size(58, 26)
+        Me.smi_Crear.Size = New System.Drawing.Size(58, 24)
         Me.smi_Crear.Text = "Crear"
         '
         'smi_Pelicula
         '
         Me.smi_Pelicula.Name = "smi_Pelicula"
-        Me.smi_Pelicula.Size = New System.Drawing.Size(224, 26)
+        Me.smi_Pelicula.Size = New System.Drawing.Size(146, 26)
         Me.smi_Pelicula.Text = "Pelicula"
         '
         'smi_Actor
         '
         Me.smi_Actor.Name = "smi_Actor"
-        Me.smi_Actor.Size = New System.Drawing.Size(224, 26)
+        Me.smi_Actor.Size = New System.Drawing.Size(146, 26)
         Me.smi_Actor.Text = "Actor"
         '
         'smi_Director
         '
         Me.smi_Director.Name = "smi_Director"
-        Me.smi_Director.Size = New System.Drawing.Size(224, 26)
+        Me.smi_Director.Size = New System.Drawing.Size(146, 26)
         Me.smi_Director.Text = "Director"
         '
         'Main_Form
@@ -82,6 +82,7 @@ Partial Class Main_Form
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.mstrip_Main
+        Me.MaximumSize = New System.Drawing.Size(1300, 600)
         Me.MinimumSize = New System.Drawing.Size(1300, 600)
         Me.Name = "Main_Form"
         Me.Text = "Main_Form"

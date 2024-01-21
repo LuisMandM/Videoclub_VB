@@ -20,7 +20,7 @@
             Return cbox_Genero.SelectedItem.ToString
         End Get
         Set
-            _selected_gender = Nothing
+            _selected_gender = Value
         End Set
     End Property
 
