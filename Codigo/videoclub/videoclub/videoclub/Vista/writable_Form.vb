@@ -84,13 +84,14 @@ Public Class writable_Form
 
     Private Sub btton_Save_Click(sender As Object, e As EventArgs) Handles btton_Save.Click
         Try
-            Dim selected = creationCtrl.selected_gender
-            Dim selected_dir = Integer.Parse(creationCtrl.director)
+
 
             If Not CheckingForm() Then
                 MsgBox("Algunos de los campos obligatorios pueden estar vacios, verifique la información e intente nuevamente", Title:="Error Creación Pelicula")
             Else
-                'selected_dir = Integer.Parse(selected_dir)
+                Dim selected = creationCtrl.selected_gender
+                Dim selected_dir = Integer.Parse(creationCtrl.director)
+
                 If role = Action.action.CREATING Then
                     ''Console.WriteLine(selected)
                     If creationCtrl.poster IsNot Nothing Then
@@ -178,9 +179,12 @@ Public Class writable_Form
             Throw New Exception("Se debe elegir un Director para realizar el guardado.")
         End If
 
-        If creationCtrl.selected_gender Is Nothing Then
+        Try
+            Dim genero = creationCtrl.selected_gender
+        Catch ex As Exception
             Throw New Exception("Se debe elegir un Genero para realizar el guardado.")
-        End If
+        End Try
+
         Try
             Dim duracion As Integer? = Integer.Parse(creationCtrl.duracion)
         Catch ex As Exception
